@@ -1,0 +1,169 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Niu's candidate counterexamples to Erdős Problem 707 in cyclic planes of order divisible by 2 or 3"
+  description: >-
+    Erdős Problem 707 asks whether every finite Sidon set of natural numbers is contained in a
+    perfect difference set. Every Sidon set of size 3 extends (Sawin), and Niu
+    (arXiv:2604.25214) proposed {0,1,3,11} and {0,1,4,11} as size-4 counterexamples; Mueller
+    showed they fail in every Singer (Desarguesian) difference set, but whether they extend to a
+    non-Desarguesian cyclic plane is open. This formalization proves, in Lean 4 with Mathlib and
+    only the standard axioms, two restrictions that need no assumption on the plane: (1) neither
+    set lies in a perfect difference set of even order (any modulus n), by Baer's
+    argument that 2 is then a multiplier; (2) {0,1,3,11} lies in no finite perfect difference set whose order is divisible by
+    2 or by 3, by Hall's multiplier theorem, which is proved here from scratch for planar
+    difference sets (Frobenius in the group algebra (ZMod p)[ZMod n]) with no prime-power
+    assumption. The question for orders with all prime factors at least 5 (for {0,1,3,11}) and
+    for odd orders (for {0,1,4,11}) is not settled.
+  authors:
+    - "VibesCode"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "VibesCode"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05B10", "51E15", "11B13"]
+
+sources:
+  - title: "Erdős Problem #707"
+    authors:
+      - "Paul Erdős"
+    id: "https://www.erdosproblems.com/707"
+    type: "web discussion"
+    relationship: "background"
+    note: "The problem: does every finite Sidon set extend to a perfect difference set?"
+    author_endorsement: "n/a"
+  - title: "Size-4 Counterexamples to the Sidon-Extension Conjecture"
+    authors:
+      - "Tong Niu"
+    id: "arXiv:2604.25214"
+    type: "paper"
+    location: "https://arxiv.org/abs/2604.25214"
+    relationship: "background"
+    note: >-
+      Source of the two candidate sets {0,1,3,11} and {0,1,4,11}. The paper (v1, v2) gives
+      computational evidence and lists polarity and multiplier arguments as open routes; v3 was
+      withdrawn in favour of Mueller's MathOverflow answer.
+    author_endorsement: "not-contacted"
+  - title: "MathOverflow question 501983, answer 502053 (Remark 2)"
+    authors:
+      - "Peter Mueller"
+    id: "https://mathoverflow.net/a/502053"
+    type: "web discussion"
+    relationship: "formalizes"
+    note: >-
+      Remark 2 states without proof, for {0,1,3,11}, that "the Hall-Baer arguments" force the order
+      q to be odd. Theorem (1) proves this observation, and the same statement for {0,1,4,11}.
+      The answer also proves, by resultants, that both sets fail in every Singer difference set;
+      that is a different restriction (plane type rather than order) and is not formalized here.
+      In the same thread Mueller wrote that he did not see whether Hall's multiplier theorem helps;
+      no written argument for orders divisible by 3 was found.
+    author_endorsement: "not-contacted"
+  - title: "MathOverflow question 501983, answer 501999"
+    authors:
+      - "Will Sawin"
+    id: "https://mathoverflow.net/a/501999"
+    type: "web discussion"
+    relationship: "background"
+    note: "Every Sidon set of size 3 extends; discusses the size-4 case and the difficulty of odd q."
+    author_endorsement: "not-contacted"
+  - title: "Forbidden Sidon subsets of perfect difference sets, featuring a human-assisted proof"
+    authors:
+      - "Boris Alexeev"
+      - "Dustin G. Mixon"
+    id: "arXiv:2510.19804"
+    type: "paper"
+    location: "https://arxiv.org/abs/2510.19804"
+    relationship: "adapts"
+    note: >-
+      Their use of Baer's polarity facts for even and odd order (for {1,2,4,8} and {1,2,4,8,13})
+      is the method of Theorem (1), applied here to Niu's sets.
+    author_endorsement: "not-contacted"
+  - title: "Polarities in finite projective planes"
+    authors:
+      - "Reinhold Baer"
+    id: "Bull. Amer. Math. Soc. 52 (1946), 77–93"
+    type: "paper"
+    relationship: "background"
+    note: "Baer's step behind Theorem (1): for even order, 2·S is a translate of S. Proved in Lean here for cyclic planes by a parity (involution) argument."
+    author_endorsement: "n/a"
+  - title: "Cyclic projective planes"
+    authors:
+      - "Marshall Hall Jr."
+    id: "Duke Math. J. 14 (1947), 1079–1090"
+    type: "paper"
+    relationship: "background"
+    note: "Hall's multiplier theorem, proved in Lean here for planar difference sets and used in Theorem (2)."
+    author_endorsement: "n/a"
+  - title: "formal-conjectures: FormalConjecturesForMathlib/Data/ZMod/PerfectDifferenceSet.lean"
+    authors:
+      - "The Formal Conjectures Authors"
+    id: "https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjecturesForMathlib/Data/ZMod/PerfectDifferenceSet.lean"
+    type: "other"
+    relationship: "other"
+    license: "Apache-2.0"
+    note: "The definition IsPerfectDifferenceSet is copied verbatim from this file."
+    author_endorsement: "n/a"
+
+related_formalizations:
+  - id: "https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/ErdosProblems/707.lean"
+    relationship: "other"
+    note: "Formal statements of Erdős 707 and of the Alexeev–Mixon results; no statement about {0,1,3,11} or {0,1,4,11}."
+
+status:
+  scope: >-
+    Proved: (1) for every B ⊆ ℕ and n, if B is a perfect difference set modulo n and B.ncard is
+    odd, then neither {0,1,3,11} nor {0,1,4,11} is a subset of B; (2) for every finite perfect
+    difference set B modulo n with 2 ∣ |B| - 1 or 3 ∣ |B| - 1, {0,1,3,11} is not a subset of B.
+    Not proved: any statement for orders whose prime factors are all at least 5 (for {0,1,3,11})
+    or for odd orders (for {0,1,4,11}); Erdős Problem 707 itself is not settled.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude (Anthropic)"]
+      framework: "n/a"
+      tool_setup: "AI-assisted: the proof was written with AI assistance (Claude) and is checked by Lean 4 with Mathlib."
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    AI-assisted using Claude models, directed by VibesCode. The proof was written with AI
+    assistance and is checked by Lean. The formal statements were compared against the sources.
+
+fidelity:
+  divergences: >-
+    "Order q" is expressed through the size of the set, |B| = q + 1. In (1) the hypothesis Odd
+    B.ncard also excludes infinite B, whose ncard is 0. The modulus n is arbitrary and no
+    prime-power assumption is made.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none (no human expert review)"
+  notes: >-
+    The formal statements were compared against Niu's sets and Mueller's Remark 2. The proofs'
+    correctness rests on the Lean check. No human mathematician has reviewed them.
+
+alignment:
+  namespace: "(root)"
+  statements:
+    - source: "Mueller, MathOverflow answer 502053, Remark 2 (even order), extended to {0,1,4,11}"
+      lean: "niu_sets_not_in_even_order_pds"
+      module: "Challenge"
+      status: "proved"
+      note: "Stated by Mueller for {0,1,3,11} without proof."
+    - source: "new: orders divisible by 3 via Hall's multiplier theorem"
+      lean: "niu_set_not_in_pds_of_order_div_two_or_three"
+      module: "Challenge"
+      status: "proved"
+      note: "Covers orders divisible by 2 or 3 for {0,1,3,11}."
+
+acknowledgements: >-
+  Mathlib; google-deepmind/formal-conjectures for the definition; Tong Niu, Peter Mueller,
+  Will Sawin, Boris Alexeev and Dustin Mixon, Reinhold Baer and Marshall Hall Jr. for the
+  mathematics this builds on.
