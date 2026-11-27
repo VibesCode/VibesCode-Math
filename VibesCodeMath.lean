@@ -8,6 +8,7 @@ public import VibesCodeMath.OeisA135508.Solution
 public import VibesCodeMath.OeisA135508.Verify
 public import VibesCodeMath.Erdos707.Solution
 public import VibesCodeMath.Erdos707.Verify
+public import VibesCodeMath.HuberSidon.Verify
 public import VibesCodeMath.CrystalUniqueness.Classification
 public import VibesCodeMath.CrystalUniqueness.Verify
 public import VibesCodeMath.OeisA379397.Reduction

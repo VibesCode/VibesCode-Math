@@ -1,0 +1,6 @@
+c parsed a formula with 7194 variables and 13231 clauses
+c VERIFIED
+c allocated 1024 1525906 71940
+c Added clauses = 4626508.  Deleted clauses = 4552282.  Max live clauses = 88260
+c verification time = 24.92 secs
+-rw-r--r-- 1 root root 1592046178 Nov 27 05:27 p16.lrat

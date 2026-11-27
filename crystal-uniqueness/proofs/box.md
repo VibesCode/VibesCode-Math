@@ -53,4 +53,4 @@ for ε0). No bare floating point in any inequality. Integers exact.
 
 ## Same field pairs: Theorem D (theorem-D.md in this folder). Same chain: positions differ ⇒ values differ (monotone in t).
 ## k = 3: only n_1(3) = 35, smaller than every other crystal (n_1(4) = 119, n_1(5) = 279).
-## k = 4: values (2s²−1)(2(s+1)²−1) = (2u−1)² − 2 with u = s(s+1); polynomial, not covered by this method; not covered by this result.
+## k = 4: values (2s²−1)(2(s+1)²−1) = (2u−1)² − 2 with u = s(s+1); polynomial, so this method does not apply; see [k4-chain.md](k4-chain.md).
