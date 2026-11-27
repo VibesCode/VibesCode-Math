@@ -33,6 +33,7 @@ Supporting computation for the tangent theorem: an [exact check](tan-arctan-sum/
 
 | Result | Claim | Status |
 | --- | --- | --- |
+| [Covering array CA(179; 3, 39, 4)](covering-array-ca179/RESULT.md) | An explicit covering array with 179 rows, 39 columns, 4 symbols and strength 3, so CAN(3, 39, 4) ≤ 179. The best known bound was 180 (Seonbin Kim, Nov 2026, in the ca-tools table), and Colbourn's tables (Nov 2024 snapshot) gave 186. An upper bound only: no lower-bound or optimality claim. A modest record on one table entry. Found by computer search; the array file and a small standalone checker are included. | **Verified** by exhaustive check of all 9139 column triples in independent programs; computer-found, **not formally verified**. |
 | [OEIS A135508, McEachen's conjecture](oeis-a135508/RESULT.md) | McEachen's conjecture (OEIS A135508, formal-conjectures `OeisA135508.conjecture`) says a(p − 1) = p for every prime p with p − 2 not prime. We prove it for every such p where p − 2 has a prime factor below 400, an infinite family, and so for every prime p < 160,000. Earlier checks went to p < 20,000. The key reduction is due to others (Cloitre, arXiv:2510.18891, and public Lean work), as credited. | **Proved** in Lean 4 + Mathlib, as a partial result. The remaining primes stay **open**. |
 | [OEIS A245212, squarefree odd part](oeis-a245212/RESULT.md) | The conjecture recorded in OEIS A245212 (formal-conjectures `OeisA245212.conjecture`) says a(n) = σ(n) exactly when n is a power of 2. We prove it when the odd part of n is squarefree. It is a short parity argument. We found no earlier proof, but it may be folklore. | **Proved** in Lean 4 + Mathlib, as a partial result. The other cases stay **open**. |
 | [OEIS A120121–A120123, 139968 is the largest term](oeis-a120121/RESULT.md) | The numbers m equal to φ(P·S), φ(P)·S and P·φ(S), where P and S are the product and sum of m's decimal digits, are exactly {1, 2, 64, 384, 139968}, {1, 2, 24, 139968} and {1, 2, 672, 34992, 139968}. This proves the conjecture in all three entries (Firoozbakht, 2006) that 139968 is the largest term. A term has no zero digit and at most 84 digits (Bottomley's bound for A049101, 2000); an exhaustive search over digit multisets finishes it. The method is standard. | **Proved**: the digit bound in Lean 4 + Mathlib; the search by exact computation in several independent programs. |
@@ -59,6 +60,7 @@ Each cell is tokens processed, with the output tokens (written by the model, rea
 | OEIS A379397–A379400 | **5.0M** (56k out) | 3.4M (25k out) | 1.4M (17k out) | 0.2M (13k out) | not used |
 | OEIS A066494 / A066516 | **8.0M** (114k out) | 5.3M (48k out) | 2.5M (44k out) | 0.3M (22k out) | not used |
 | Sorting networks, Van Voorhis's recurrence | **13.2M** (141k out) | 10.9M (86k out) | 1.8M (21k out) | 0.4M (34k out) | not used |
+| Covering array CA(179; 3, 39, 4) | **15.1M** (102k out) | 14.4M (72k out) | 0.5M (9k out) | 0.3M (21k out) | not used |
 
 ## Layout
 
@@ -88,6 +90,7 @@ oeis-a120121/          write-up and the search programs with logs
 oeis-a058627/          write-up and three search programs with logs (no Lean)
 VibesCodeMath/SortingSize/   Basic (definitions), Challenge, Solution, Verify for the sorting-network recurrence
 sorting-network-size/  write-up and an independent Python check with its output
+covering-array-ca179/  the array CA(179; 3, 39, 4), its hash, two standalone checkers and the write-up (no Lean)
 check.sh               reruns everything
 TOKENS.md              measured token usage and models for each result
 palomar/tan-arctan-explicit/   the headline theorem as a standalone package for the Palomar registry

@@ -20,6 +20,7 @@ Figures come from the usage records of the Claude sessions that worked on each r
 | OEIS A379397–A379400 | 5.0M | 56k | Opus 5.5 3.4M (25k out); Sonnet 5.5 1.4M (17k out); Haiku 5.5 0.2M (13k out) |  |
 | OEIS A066494 / A066516 | 8.0M | 114k | Opus 5.5 5.3M (48k out); Sonnet 5.5 2.5M (44k out); Haiku 5.5 0.3M (22k out) |  |
 | Sorting networks, Van Voorhis's recurrence | 13.2M | 141k | Opus 5.5 10.9M (86k out); Sonnet 5.5 1.8M (21k out); Haiku 5.5 0.4M (34k out) |  |
+| Covering array CA(179; 3, 39, 4) | 15.1M | 102k | Opus 5.5 14.4M (72k out); Sonnet 5.5 0.5M (9k out); Haiku 5.5 0.3M (21k out) | read 2026-11-27 at 12:10 UTC |
 
 ## Shared work, not split between results
 
