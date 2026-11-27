@@ -15,6 +15,8 @@ public import VibesCodeMath.OeisA379397.Reduction
 public import VibesCodeMath.OeisA379397.Verify
 public import VibesCodeMath.OeisA066494.Solution
 public import VibesCodeMath.OeisA066494.Verify
+public import VibesCodeMath.OeisA120121.Solution
+public import VibesCodeMath.OeisA120121.Verify
 
 @[expose] public section
 

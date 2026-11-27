@@ -17,7 +17,7 @@ for t in erdos707_even_order_check erdos707_order_div_two_or_three_check; do
   echo "$out" | grep -q "'$t' depends on axioms: \[propext, Classical.choice, Quot.sound\]" \
     && echo "Erdős 707 ($t): ok, standard axioms only" || { echo "Erdős 707 $t: unexpected axioms"; exit 1; }
 done
-for t in huber_s16_ge_check huber_s17_ge_check a379397_bound_check a066494_reduction_check crystal_reduction_check CrystalUniqueness.crystal_iff_chain CrystalUniqueness.crystal_iff_pell CrystalUniqueness.crystal_k_determines CrystalUniqueness.x_strictMono CrystalUniqueness.nn_strictMonoOn; do
+for t in a120121_bound_check huber_s16_ge_check huber_s17_ge_check a379397_bound_check a066494_reduction_check crystal_reduction_check CrystalUniqueness.crystal_iff_chain CrystalUniqueness.crystal_iff_pell CrystalUniqueness.crystal_k_determines CrystalUniqueness.x_strictMono CrystalUniqueness.nn_strictMonoOn; do
   echo "$out" | grep -q "'$t' depends on axioms: \[propext, Classical.choice, Quot.sound\]" \
     && echo "$t: ok, standard axioms only" || { echo "$t: unexpected axioms"; exit 1; }
 done
@@ -35,6 +35,7 @@ cc -O2 -o "$T/dp2" oeis-a379397/scripts/dp2.c
 "$T/dp2" 100000 40 | diff -q - oeis-a379397/scripts/dp2-100000.log >/dev/null && echo "A379397-A379400 count to 100,000: ok" || { echo "A379397 count MISMATCH"; exit 1; }
 cc -O2 -o "$T/check_b" oeis-a066494/scripts/check_b.c -lm
 "$T/check_b" 1000000 2>&1 | diff -q - oeis-a066494/scripts/check_b-1e6.log >/dev/null && echo "A066494/A066516 to 10^6: ok" || { echo "A066494 MISMATCH"; exit 1; }
+python3 oeis-a120121/scripts/enum_exact.py | grep "^A12012" | diff -q - <(grep "^A12012" oeis-a120121/scripts/enum_exact.log) >/dev/null && echo "A120121-A120123 exhaustive search: ok" || { echo "A120121 MISMATCH"; exit 1; }
 echo "== Huber Sidon witnesses =="
 python3 huber-sidon/code/check.py 16 huber-sidon/witnesses/s16.txt | grep -q "^OK n=16 |M_n|=157 |A|=83 Sidon" && echo "s(16) >= 83 witness: ok" || { echo "s16 witness FAILED"; exit 1; }
 python3 huber-sidon/code/check.py 17 huber-sidon/witnesses/s17.txt | grep -q "^OK n=17 |M_n|=193 |A|=96 Sidon" && echo "s(17) >= 96 witness: ok" || { echo "s17 witness FAILED"; exit 1; }
