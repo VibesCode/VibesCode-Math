@@ -1,0 +1,11 @@
+# primecount checks, run 2026-11-27 14:37 UTC
+primecount 9.1, <https://github.com/kimwalisch/primecount>
+pi(1489415921531) default:  55185648700
+pi(1489415921531) legendre: 55185648700
+pi(1489415921530) default:  55185648699
+pi(1489415921530) legendre: 55185648699
+pi(1000000000000) default: 37607912018  legendre: 37607912018
+pi(1500000000000) default: 55563209929  legendre: 55563209929
+sympy isprime(p): True
+isqrt(m*(p+1)) = 286695629220  square: True
+factor m = {2: 2, 5: 2, 7: 1, 13: 2, 683: 2}  factor p+1 = {2: 2, 3: 2, 7: 1, 11: 2, 29: 2, 241: 2}

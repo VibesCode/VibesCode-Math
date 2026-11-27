@@ -45,6 +45,8 @@ head -n 215 covering-array-ca216/CA_216_3_11_5.txt > "$T/ca215.txt"; python3 cov
 python3 oeis-a226472/scripts/verify.py | grep -q "^ALL OK" && echo "A226472: the 13 terms are exact squares; brute force below 2*10^6 agrees" || { echo "A226472 verify FAILED"; exit 1; }
 cc -O2 -o "$T/xs" oeis-a226472/scripts/xs.c -lm && cc -O2 -o "$T/xs2" oeis-a226472/scripts/xs2.c -lm
 for p in xs xs2; do h=$("$T/$p" 0 100000000 | grep -o "n=[0-9]*" | tr '\n' ' '); [ "$h" = "n=0 n=1 n=6 n=8 n=4086 n=24136 n=162297 n=7868054 n=29792904 " ] && echo "A226472 scan $p over [0, 10^8): ok" || { echo "A226472 scan $p MISMATCH: $h"; exit 1; }; done
+python3 oeis-a073614/scripts/verify.py | grep -q "^ALL OK" && echo "A073614: a(23) arithmetic exact, p prime" || { echo "A073614 verify FAILED"; exit 1; }
+cc -O2 -o "$T/seg2" oeis-a073614/scripts/seg2.c && h=$("$T/seg2" 0 200000000 0 | tr '\n' ' ') && [ "$h" = "hit m=150 p=863 hit m=1274 p=10399 hit m=7776 p=79349 hit m=37631 p=449083 hit m=96625 p=1252259 hit m=1436778 p=22806361 hit m=1617173 p=25874767 hit m=8751645 p=155793619 END hi=200000000 pi=11078937 " ] && echo "A073614 sieve scan to 2*10^8: ok (known terms, pi(2*10^8) = 11078937)" || { echo "A073614 sieve scan MISMATCH"; exit 1; }
 sn=$(python3 sorting-network-size/scripts/check.py); echo "$sn" | diff -q - sorting-network-size/scripts/check.out >/dev/null && echo "Sorting networks: exact s(n), n <= 6, and random checks: ok" || { echo "Sorting networks check FAILED"; exit 1; }
 echo "== Huber Sidon witnesses =="
 python3 huber-sidon/code/check.py 16 huber-sidon/witnesses/s16.txt | grep -q "^OK n=16 |M_n|=157 |A|=83 Sidon" && echo "s(16) >= 83 witness: ok" || { echo "s16 witness FAILED"; exit 1; }

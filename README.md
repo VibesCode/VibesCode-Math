@@ -42,6 +42,7 @@ Supporting computation for the tangent theorem: an [exact check](tan-arctan-sum/
 | [OEIS A379397–A379400, sums of nine cubes](oeis-a379397/RESULT.md) | The numbers with exactly k = 2, 3, 4, 5 representations as a sum of at most nine positive cubes (A379397–A379400) are finite sets, and the listed terms are complete. This proves Greathouse's conjecture that 455 is the last term of A379399. For each k every such n is below 240 + (9k+1)³, by Dickson's theorem; an exhaustive count finishes it. A direct extension of Alper Ferudun's argument for A379396 (k = 1). The same method gives complete lists for every k ≤ 20. | **Proved**: the counting step in Lean 4 + Mathlib with Dickson's theorem (1939) as an explicit hypothesis; the finite part by exact computation in several independent programs. |
 | [OEIS A066494 and A066516, prime gaps and φ(n)](oeis-a066494/RESULT.md) | A066494 (prime(n+1) − prime(n) = φ(n)) is exactly {1, 3, 8, 9, 12, 18, 24}, and A066516 (g(σ(n)) = φ(n)) is exactly {1, 4, 5, 15, 18, 30, 36}, unconditionally. For A066516 the OEIS had this only on the Riemann hypothesis. For n ≥ 688,383, explicit bounds of Dusart and of Rosser–Schoenfeld force the gap below φ(n). The method is standard; the new part is only the explicit, complete closure. | **Proved**: the reduction in Lean 4 + Mathlib with the three published bounds as explicit hypotheses; n < 688,383 by exact computation in two independent programs. |
 | [OEIS A226472, n² XOR n(n+1)/2 a square](oeis-a226472/RESULT.md) | Three further terms of A226472 (Ratushnyak, 2013): 42286731641, 45162001983 and 90220224758. These are all terms in (22666693375, 10^11), found by exhaustive search with independent programs. The entry had 10 terms and the comment "No other terms below 2^35". Nothing is claimed beyond 10^11. | **Computed**: exact big-integer check of each term plus three independent exhaustive scans, computer-assisted; **not formally verified**. |
+| [OEIS A073614, m·(prime(m)+1) a square](oeis-a073614/RESULT.md) | a(23) = 55185648700 (prime(m) = 1489415921531, m·(p+1) = 286695629220²), found by exhaustive search with independent programs. It extends the 2010 bound a(23) > π(10^12) (Donovan Johnson). Three sieves with no shared code cover the gap from a(22), and π(p) = m is confirmed by primecount with two algorithms. | **Computed**: exact arithmetic, primality by three methods, three independent scans, computer-assisted; **not formally verified**. |
 | [Sorting networks, Van Voorhis's recurrence](sorting-network-size/RESULT.md) | A Lean 4 formalization of Van Voorhis's 1972 recurrence for the size of sorting networks: s(n) ≥ s(n−1) + ⌈log₂ n⌉, where s(n) is the minimum number of comparators in a sorting network on n inputs. Combined with Harder's verified value s(11) = 35 (given as an explicit hypothesis), it yields the lower bounds s(12) ≥ 39, …, s(32) ≥ 135 listed in Dobbelaere's table. This is a formalization of a known theorem; it gives no new bound. We found no earlier formal proof of this recurrence. | **Proved** in Lean 4 + Mathlib (standard axioms); s(11) ≥ 35 is an explicit hypothesis. |
 
 ### What each result cost to find
@@ -63,9 +64,9 @@ Each cell is tokens processed, with the output tokens (written by the model, rea
 | OEIS A066494 / A066516 | **8.0M** (114k out) | 5.3M (48k out) | 2.5M (44k out) | 0.3M (22k out) | not used |
 | Sorting networks, Van Voorhis's recurrence | **13.2M** (141k out) | 10.9M (86k out) | 1.8M (21k out) | 0.4M (34k out) | not used |
 | Covering arrays CA(179; 3, 39, 4) and CA(216; 3, 11, 5) | **26.9M** (155k out) | 25.3M (111k out) | 0.9M (14k out) | 0.7M (30k out) | not used |
-| OEIS A226472 | **64.9M** (519k out) | 22.2M (86k out) | 40.8M (273k out) | 1.9M (160k out) | not used |
+| OEIS A226472 and A073614 | **64.9M** (519k out) | 22.2M (86k out) | 40.8M (273k out) | 1.9M (160k out) | not used |
 
-The A226472 figure covers its whole working session, which may also include other problems looked at before it (see [TOKENS.md](TOKENS.md)).
+One session found both A226472 and A073614 and also worked on other problems that gave no result here, so that figure is shared and covers the whole session (see [TOKENS.md](TOKENS.md)).
 
 ## Layout
 
@@ -94,6 +95,7 @@ VibesCodeMath/OeisA120121/   Challenge, Solution, Verify for the A120121–A1201
 oeis-a120121/          write-up and the search programs with logs
 oeis-a058627/          write-up and three search programs with logs (no Lean)
 oeis-a226472/          write-up, three scan programs, an exact Python check, and logs (no Lean)
+oeis-a073614/          write-up, three sieve programs, an exact Python check, and logs (no Lean)
 VibesCodeMath/SortingSize/   Basic (definitions), Challenge, Solution, Verify for the sorting-network recurrence
 sorting-network-size/  write-up and an independent Python check with its output
 covering-array-ca179/  the array CA(179; 3, 39, 4), its hash, two standalone checkers and the write-up (no Lean)
