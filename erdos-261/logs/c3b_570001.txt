@@ -1,0 +1,11 @@
+at 580000 bad=0
+at 590000 bad=0
+at 600000 bad=0
+at 610000 bad=0
+at 620000 bad=0
+at 630000 bad=0
+at 640000 bad=0
+at 650000 bad=0
+at 660000 bad=0
+at 670000 bad=0
+CHECK3 570001..670000 bad=0

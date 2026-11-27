@@ -1,0 +1,10 @@
+worst n=10001 depth=11165
+worst n=10012 depth=19740
+worst n=10013 depth=45315
+worst n=10170 depth=450366
+worst n=88225 depth=571263
+worst n=139162 depth=886420
+worst n=179881 depth=3074405
+worst n=644534 depth=4417226
+worst n=734946 depth=7431262
+DONE 10001..1000000 worst depth 7431262 at n=734946, max states 4, nohit 0

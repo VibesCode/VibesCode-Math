@@ -1,0 +1,6 @@
+range [2,400000] all ok unless FAIL above; worst n=179881 depth(levels)=3074405 max frontier=2 checksum=5103922730897970849
+
+real	30m10.699s
+user	22m10.866s
+sys	0m0.027s
+EXIT 0

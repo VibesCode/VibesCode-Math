@@ -1,0 +1,9 @@
+at 900000 bad=0
+at 910000 bad=0
+at 920000 bad=0
+at 930000 bad=0
+at 940000 bad=0
+at 950000 bad=0
+at 960000 bad=0
+at 970000 bad=0
+at 980000 bad=0
