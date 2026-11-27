@@ -9,6 +9,11 @@ echo "$out" | grep -q "'target_check' depends on axioms: \[propext, Classical.ch
   && echo "Lean proof: ok, standard axioms only" || { echo "unexpected axioms"; exit 1; }
 echo "$out" | grep -q "'a245212_target_check' depends on axioms: \[propext, Classical.choice, Quot.sound\]" \
   && echo "A245212 proof: ok, standard axioms only" || { echo "A245212: unexpected axioms"; exit 1; }
+for t in a135508_family_check a135508_bounded_check; do
+  echo "$out" | grep -q "'$t' depends on axioms: \[propext, Classical.choice, Quot.sound\]" \
+    && echo "A135508 ($t): ok, standard axioms only" || { echo "A135508 $t: unexpected axioms"; exit 1; }
+done
+python3 oeis-a135508/scripts/fidelity.py | diff -q - oeis-a135508/scripts/fidelity.out >/dev/null && echo "A135508 definition check: ok"
 python3 oeis-a245212/scripts/fidelity.py | diff -q - oeis-a245212/scripts/fidelity.out >/dev/null && echo "A245212 definition check: ok"
 echo "== Definitions match Ono's paper =="
 python3 tan-arctan-explicit/scripts/fidelity.py | diff -q - tan-arctan-explicit/scripts/fidelity.out >/dev/null \

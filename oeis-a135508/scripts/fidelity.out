@@ -1,0 +1,5 @@
+FC a(1..30): [2, 3, 1, 1, 1, 7, 2, 1, 1, 11, 1, 1, 7, 1, 1, 17, 1, 1, 1, 7, 11, 23, 1, 1, 1, 1, 7, 29, 1, 1]
+exact division x(n)|x(n+1) for all n<=200: True
+primes p<=200, p-2 not prime, a(p-1)=p: True
+primes with p-2 prime and a(p-1)=p: [7]
+primes with p-2 prime and a(p-1)!=p: [(5, 1), (13, 1), (19, 1), (31, 1), (43, 1), (61, 1), (73, 1), (103, 1)]

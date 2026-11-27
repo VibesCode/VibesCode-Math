@@ -23,12 +23,14 @@ This list grows as new results pass their checks. Each one states exactly what i
 | Result | Claim | Status |
 | --- | --- | --- |
 | [Explicit Ono Corollary 1.2](tan-arctan-explicit/RESULT.md) | For n ≥ 5 outside E, tan(arctan 1 + ⋯ + arctan n) is not an integer. | **Proved** in Lean 4 + Mathlib |
-| [Exact check to 1.2·10⁸](tan-arctan-sum/RESULT.md) | tan(arctan 1 + ⋯ + arctan n) is not an integer for 5 ≤ n ≤ 1.2·10⁸. That covers every member of E in that range, including the twelve cases of Ono's Remark 3.3. | Finite verification. The conjecture stays **open**. |
+
+Supporting computation: an [exact check](tan-arctan-sum/RESULT.md) that tan(arctan 1 + ⋯ + arctan n) is not an integer for every 5 ≤ n ≤ 1.2·10⁸. It covers the members of E in that range, which the theorem leaves aside, including the twelve cases of Ono's Remark 3.3. The conjecture itself stays open.
 
 ### Smaller results
 
 | Result | Claim | Status |
 | --- | --- | --- |
+| [OEIS A135508, McEachen's conjecture](oeis-a135508/RESULT.md) | McEachen's conjecture (OEIS A135508, formal-conjectures `OeisA135508.conjecture`) says a(p − 1) = p for every prime p with p − 2 not prime. We prove it for every such p where p − 2 has a prime factor below 400, an infinite family, and so for every prime p < 160,000. Earlier checks went to p < 20,000. The key reduction is due to others (Cloitre, arXiv:2510.18891, and public Lean work), as credited. | **Proved** in Lean 4 + Mathlib, as a partial result. The remaining primes stay **open**. |
 | [OEIS A245212, squarefree odd part](oeis-a245212/RESULT.md) | The conjecture recorded in OEIS A245212 (formal-conjectures `OeisA245212.conjecture`) says a(n) = σ(n) exactly when n is a power of 2. We prove it when the odd part of n is squarefree. It is a short parity argument. We found no earlier proof, but it may be folklore. | **Proved** in Lean 4 + Mathlib, as a partial result. The other cases stay **open**. |
 
 ## Layout
@@ -40,6 +42,8 @@ VibesCodeMath/TanArctanExplicit/
   Verify.lean      restates the claim, proves it from Solution.lean, prints the axioms used
 tan-arctan-explicit/   write-up, plus scripts that check the definitions and show where the constants came from
 tan-arctan-sum/        the exact computation to 1.2·10⁸: C and Python code, logs
+VibesCodeMath/OeisA135508/   Challenge, Solution, Verify for the A135508 result
+oeis-a135508/          write-up and definition check
 VibesCodeMath/OeisA245212/   Challenge, Solution, Verify for the A245212 result
 oeis-a245212/          write-up, definition check and search code
 check.sh               reruns everything
@@ -56,6 +60,8 @@ lake build
 ```
 
 `lake build` prints the axioms of each result's `Verify.lean` check, and every one should read `[propext, Classical.choice, Quot.sound]`. The only `sorry`s are in the `Challenge.lean` files, which hold the statements on their own.
+
+Memory: the A135508 proof has the Lean kernel check a finite table, which needs about 10 GB of free memory. Everything else builds in ordinary memory.
 
 To rerun the computations as well, run `bash check.sh`. It needs a C compiler and Python 3.
 
