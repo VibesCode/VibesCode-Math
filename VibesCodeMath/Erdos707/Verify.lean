@@ -10,12 +10,12 @@ using only the standard axioms (propext, Classical.choice, Quot.sound). -/
 theorem erdos707_even_order_check :
     ∀ (B : Set ℕ) (n : ℕ), IsPerfectDifferenceSet B n → Odd B.ncard →
       ¬ ({0, 1, 3, 11} : Set ℕ) ⊆ B ∧ ¬ ({0, 1, 4, 11} : Set ℕ) ⊆ B :=
-  niu_sets_not_in_even_order_pds
+  sets_0_1_3_11_and_0_1_4_11_not_in_even_order_pds
 
 theorem erdos707_order_div_two_or_three_check :
     ∀ (B : Set ℕ) (n : ℕ), IsPerfectDifferenceSet B n → B.Finite →
       (2 ∣ B.ncard - 1 ∨ 3 ∣ B.ncard - 1) → ¬ ({0, 1, 3, 11} : Set ℕ) ⊆ B :=
-  niu_set_not_in_pds_of_order_div_two_or_three
+  set_0_1_3_11_not_in_pds_of_order_div_two_or_three
 
 #print axioms erdos707_even_order_check
 #print axioms erdos707_order_div_two_or_three_check

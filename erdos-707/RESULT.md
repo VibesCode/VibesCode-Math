@@ -1,4 +1,4 @@
-# Erdős Problem 707: Niu's four-element sets
+# Erdős Problem 707: Mueller's four-element sets
 
 **Status: a partial result.** The four-element question stays open.
 
@@ -6,7 +6,7 @@
 
 A *perfect difference set* modulo n is a set B of residues in which every nonzero residue mod n is a difference b − b′ of elements of B in exactly one way. Its *order* is |B| − 1. These are exactly the cyclic projective planes. Erdős Problem 707 ([erdosproblems.com/707](https://www.erdosproblems.com/707)) asks whether every finite Sidon set embeds in some perfect difference set.
 
-Sawin settled the three-element case. For four elements, Niu (arXiv:2604.25214) identified **{0, 1, 3, 11}** and **{0, 1, 4, 11}** as the candidate counterexamples, the sets for which no perfect difference set containing them is known.
+Sawin settled the three-element case. For four elements, Peter Mueller (MathOverflow answer 502053) found **{0, 1, 3, 11}** and **{0, 1, 4, 11}**, which lie in no Singer difference set. No perfect difference set containing either is known.
 
 ## The theorems
 
@@ -18,16 +18,16 @@ Let B ⊆ ℕ be a perfect difference set for any modulus n. No assumption is ma
 In Lean ([`VibesCodeMath/Erdos707/Challenge.lean`](../VibesCodeMath/Erdos707/Challenge.lean)):
 
 ```lean
-theorem niu_sets_not_in_even_order_pds :
+theorem sets_0_1_3_11_and_0_1_4_11_not_in_even_order_pds :
     ∀ (B : Set ℕ) (n : ℕ), IsPerfectDifferenceSet B n → Odd B.ncard →
       ¬ ({0, 1, 3, 11} : Set ℕ) ⊆ B ∧ ¬ ({0, 1, 4, 11} : Set ℕ) ⊆ B
 
-theorem niu_set_not_in_pds_of_order_div_two_or_three :
+theorem set_0_1_3_11_not_in_pds_of_order_div_two_or_three :
     ∀ (B : Set ℕ) (n : ℕ), IsPerfectDifferenceSet B n → B.Finite →
       (2 ∣ B.ncard - 1 ∨ 3 ∣ B.ncard - 1) → ¬ ({0, 1, 3, 11} : Set ℕ) ⊆ B
 ```
 
-**About "contains".** The statements use literal containment, A ⊆ B. That is equivalent to Niu's notion that A extends to a perfect difference set *up to affine maps* x ↦ ux + b with u a unit. Such a map sends a perfect difference set to another one of the same order, so uA + b ⊆ B exactly when A ⊆ u⁻¹(B − b).
+**About "contains".** The statements use literal containment, A ⊆ B. That is equivalent to the notion that A extends to a perfect difference set *up to affine maps* x ↦ ux + b with u a unit. Such a map sends a perfect difference set to another one of the same order, so uA + b ⊆ B exactly when A ⊆ u⁻¹(B − b).
 
 ## How the proofs go
 
@@ -36,10 +36,16 @@ theorem niu_set_not_in_pds_of_order_div_two_or_three :
 
 ## Credits, and what is not new
 
-- The question and the two candidate sets are Niu's (arXiv:2604.25214). Sawin settled the three-element case.
-- Peter Mueller (MathOverflow answer 502053, October 2025) asserted the even-order case for {0, 1, 3, 11}, without proof. He also reports a resultant computation showing that neither set lies in any Desarguesian (Singer) plane. All known cyclic planes are Desarguesian. Our result instead holds for every plane of the stated orders, whatever its type.
+- Peter Mueller (MathOverflow answer 502053 to Mixon's question 501983, October 2025) found both sets, {0, 1, 3, 11} and {0, 1, 4, 11}. He proved, using an argument of Sawin's for the second, that neither lies in any Singer difference set. He also noted that the Hall–Baer arguments of Alexeev and Mixon force the order to be odd for a perfect difference set containing {0, 1, 3, 11}. T. Niu's preprint arXiv:2604.25214, which found the same two sets, has since been withdrawn by its author with reference to Mueller's answer.
+- Sawin settled the three-element case.
 - The methods are classical, due to Baer (1946) and Hall (1947). Our use of them follows Alexeev and Mixon (arXiv:2510.19804).
-- New here: the order-3 case for {0, 1, 3, 11}, written proofs of both cases, and complete Lean proofs, including the multiplier theorem.
+- **New here:**
+  - the even-order case for {0, 1, 4, 11};
+  - the case of order divisible by 3 for {0, 1, 3, 11}, using Hall's multiplier theorem (Mueller remarked that he did not see whether the multiplier theorem could help);
+  - written proofs of both even-order cases;
+  - complete Lean proofs of everything, including Hall's multiplier theorem for planar difference sets, which is not in Mathlib.
+  
+  All of this holds for every perfect difference set, Singer or not.
 
 ## What is left open
 
