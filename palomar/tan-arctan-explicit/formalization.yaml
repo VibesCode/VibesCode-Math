@@ -1,0 +1,128 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "An explicit form (n₀ = 5) of Ono's theorem on integer values of tan(arctan 1 + ⋯ + arctan n)"
+  description: >-
+    Let x_n = tan(arctan 1 + arctan 2 + ⋯ + arctan n) = B_n / A_n, where
+    (1 + i)(1 + 2i)⋯(1 + ni) = A_n + B_n i in the Gaussian integers. Amdeberhan, Medina
+    and Moll (2008) conjectured that x_n is never an integer for n ≥ 5. Ono
+    (arXiv:2607.05739, Corollary 1.2) proved that there is an n₀ such that x_n is not an
+    integer for every n ≥ n₀ outside a sparse exceptional set E = {n ≥ 5 : |x_n| > n/2 + 1},
+    without giving a value of n₀. This formalization proves, in Lean 4 with Mathlib and only
+    the standard axioms, that n₀ = 5 works: for every n ≥ 5 with n ∉ E, A_n does not divide
+    B_n. The proof combines a reduction (two distinct primes p > 2n dividing 1 + k² for some
+    k ≤ n force |x_n| ≥ 2n + 2 at an integer value), twelve kernel-checked prime
+    certificates covering 5 ≤ n ≤ 499,950,001,250, and a fully formal Chebyshev-type
+    argument for all larger n. It does not prove the Amdeberhan–Medina–Moll conjecture: the
+    indices in E are not treated, and E is not known to be finite.
+  authors:
+    - "VibesCode"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "VibesCode"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11N32", "11R11", "11A41"]
+
+sources:
+  - title: "Integer values of tan(arctan 1 + arctan 2 + ⋯ + arctan n) are rare"
+    authors:
+      - "Ken Ono"
+    id: "arXiv:2607.05739"
+    type: "paper"
+    location: "https://arxiv.org/abs/2607.05739"
+    relationship: "adapts"
+    note: >-
+      Corollary 1.2 states the result for some unspecified n₀. This formalization proves the
+      same statement with the explicit value n₀ = 5. The mechanism (a prime p > 2n dividing
+      exactly one factor 1 + k² must divide 1 + m² at an integer value m) follows the paper's
+      Lemmas 2.2–2.3; the explicit range split, prime certificates and the Chebyshev-type
+      estimate for large n were worked out for this formalization. Corollary 1.2 and the
+      definition of E were checked against the text of arXiv:2607.05739v1.
+    author_endorsement: "not-contacted"
+  - title: "Arithmetical properties of a sequence arising from an arctangent sum"
+    authors:
+      - "Tewodros Amdeberhan"
+      - "Luis A. Medina"
+      - "Victor H. Moll"
+    id: "J. Number Theory 128 (2008), no. 6, 1807–1846"
+    type: "paper"
+    relationship: "background"
+    note: "Source of the conjecture that x_n is not an integer for n ≥ 5, which this work does not settle."
+    author_endorsement: "not-contacted"
+  - title: "formal-conjectures: FormalConjectures/Arxiv/2607.05739/TanArctanSum.lean"
+    authors:
+      - "The Formal Conjectures Authors"
+    id: "https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/Arxiv/2607.05739/TanArctanSum.lean"
+    type: "other"
+    relationship: "other"
+    license: "Apache-2.0"
+    note: >-
+      The definitions gaussProd, A, B, x, IsIntegerValue and exceptional in Challenge.lean and
+      Solution.lean are copied verbatim from this file, so the statement uses the community's
+      reviewed formal definitions rather than new ones.
+    author_endorsement: "n/a"
+
+related_formalizations:
+  - id: "https://github.com/AxiomMath/TanArctan"
+    relationship: "independent"
+    note: >-
+      Formalizes three results of Ono's paper (the kernel divisibility theorem, the proximity
+      lemma for E, and #(E ∩ [1, N]) = O(log N)). Per the paper's Appendix A, the growth
+      estimate of Lemma 2.3 was not included there, so the "x_n ∉ Z for n ≥ n₀, n ∉ E" half of
+      Corollary 1.2 was not formalized; this entry supplies it with n₀ = 5. No code from it is used; formal-conjectures takes its definitions of A, B and x
+      from it.
+
+status:
+  scope: >-
+    Proved: for every natural number n ≥ 5 with n ∉ E, ¬ (A_n ∣ B_n), where E is
+    formal-conjectures' `exceptional` = {n ≥ 5 : A_n = 0 ∨ n/2 + 1 < |x_n|}. The extra
+    disjunct A_n = 0 does not weaken the statement: if A_n = 0 then A_n ∣ B_n would force
+    B_n = 0 and hence a zero Gaussian product, which is impossible. Not proved: anything about
+    the indices in E, finiteness of E, or the full Amdeberhan–Medina–Moll conjecture.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude (Anthropic)"]
+      framework: "n/a"
+      tool_setup: "AI-assisted: the proof was written with AI assistance (Claude) and is checked by Lean 4 with Mathlib."
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    AI-assisted using Claude models, directed by VibesCode. The proof was written with AI
+    assistance and is checked by Lean. The formal statement was compared against the source
+    paper.
+
+fidelity:
+  divergences: >-
+    E includes indices with A_n = 0, read as |x_n| = ∞; see status.scope for why this does not
+    weaken the theorem. Integer values are expressed as A_n ∣ B_n, as in formal-conjectures.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none (no human expert review)"
+  notes: >-
+    The formal statement was compared against Corollary 1.2 of arXiv:2607.05739v1. The
+    definitions are formal-conjectures' upstream ones, unchanged. A_n and B_n were recomputed
+    exactly for n ≤ 2000, reproducing Ono's Table 1 and the exceptional indices he lists. No
+    human mathematician has reviewed the proof; its correctness rests on the Lean check.
+
+alignment:
+  namespace: "Arxiv.«2607.05739»"
+  statements:
+    - source: "Ono, arXiv:2607.05739, Corollary 1.2"
+      lean: "tan_arctan_not_integer_outside_exceptional"
+      module: "Challenge"
+      status: "adapted"
+      note: "Corollary 1.2 with the unspecified n₀ replaced by the explicit value 5."
+
+acknowledgements: >-
+  Mathlib; google-deepmind/formal-conjectures for the definitions; Ken Ono's paper for the
+  result being made explicit; Lean's Comparator, NanoDa and con-ron kernels.
