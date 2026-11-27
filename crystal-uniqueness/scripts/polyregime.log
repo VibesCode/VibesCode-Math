@@ -1,0 +1,6 @@
+H(k') = k'^3 + -14/3 k'^2 + 47/9 k' + 19/162  ; next term 73/486 /k'
+n_1(H(k')) - n_4(k') = -(957906*x**5 - 7396434*x**4 + 18971253*x**3 - 17985240*x**2 + 5343273*x - 304304)/531441
+162H integer poly: [162, -756, 846, 19]
+upper/lower leading coeffs: 2/27 2/27 X0 = 26
+integer roots of g: []
+k' < X0 with n_4(k') a position-1 value: []

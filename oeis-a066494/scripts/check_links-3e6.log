@@ -1,0 +1,13 @@
+PASS gamma < ln 2  (gamma=0.577215664901533, ln2=0.693147180559945)
+PASS e^gamma = 1.7810724179902 <= 2
+PASS lnln 688383 in [2.59839162110118829419416412106716247255589507, 2.59839162110118829419416412106716247255594099] >= 1
+PASS 688383 >= 396738
+PASS coefficientwise [8.0, 20.05096, 12.5637811538] <= [12.5, 25.0, 25.0]
+PASS B>=1 so 2B <= 2B^2 (B(l)=e^g l + c/l >= 2 sqrt(e^g c) = 4.22565)
+PASS Dusart 6.8 on 13937651 primes up to 255646999
+PASS Dusart 6.6 for 688383 <= k <= 13971259
+PASS RS Thm 15 for 3 <= n <= 3000000 (min slack 0.0162)
+PASS chain A066494: g_n <= 2n/(25 ln n) < phi(n) on [N0,N]
+PASS chain A066516: sigma < n r, g_m <= 2nr/(25 ln n) <= n/r on [N0,N]
+max over [N0,N] of 2r^2/(25 ln n) = 0.1774 (must be <= 1)
+ALL PASS

@@ -1,0 +1,8 @@
+N=3000000 maxsigma=13313664 need_prime_index=13313665 sieve_limit=260760178 primes_found=14235128
+S1: 1 3 8 9 12 18 24
+S2: 1 4 5 15 18 30 36
+pi(396737)=33608
+smallest k with prime(k)>=396738: k=33609 prime(k)=396833
+max g(n)/phi(n), n in [101,N]: 18/48 at n=180
+max g(sigma(n))/phi(n), n in [101,N]: 14/32 at n=120
+sigma*phi<n^2 failures for 2<=n<=N: 0

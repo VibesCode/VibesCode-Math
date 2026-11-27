@@ -24,6 +24,7 @@ This list grows as new results pass their checks. Each one states exactly what i
 | --- | --- | --- |
 | [Explicit Ono Corollary 1.2](tan-arctan-explicit/RESULT.md) | For n ≥ 5 outside E, tan(arctan 1 + ⋯ + arctan n) is not an integer. | **Proved** in Lean 4 + Mathlib |
 | [Erdős 707, Niu's four-element sets](erdos-707/RESULT.md) | Niu's candidate sets {0,1,3,11} and {0,1,4,11} lie in no perfect difference set of even order, and {0,1,3,11} lies in none whose order is divisible by 3. This holds for any modulus, with no prime-power or Desarguesian assumption. Includes a Lean proof of Hall's multiplier theorem for planar difference sets. The question and the sets are Niu's (arXiv:2604.25214). The even case for {0,1,3,11} was asserted without proof by Mueller (MathOverflow 502053). The methods are classical (Baer, Hall), following Alexeev and Mixon. | **Proved** in Lean 4 + Mathlib, as a partial result. The four-element question stays **open**. |
+| [Crystal uniqueness, partial results](crystal-uniqueness/RESULT.md) | For the crystal-components conjecture of Abrate, Barbero, Cerruti and Murru (arXiv:1601.03081, formal-conjectures `crystals_components_unique`): (1) no number is a crystal on two different chains k, k' ∈ {3} ∪ {5, …, 1000}; (2) two chains whose units lie in the same real quadratic field never share a crystal, at any positions and with no bound on k; (3) no number is a crystal at position 1 of one chain and position 4 of another. (1) uses Matveev's lower bound for linear forms in three logarithms, a Baker–Davenport reduction and an exact check, in rigorous interval arithmetic with independent implementations; (2) is an elementary size argument; (3) is a polynomial squeeze plus a finite check. The reduction of the conjecture to injectivity of (k, t) ↦ n_t(k) is checked in Lean. | **Partial result.** (1)–(3) are computer-assisted or written proofs, **not Lean-checked**; the reduction is **Proved** in Lean 4 + Mathlib. The chain k = 4 is not covered by (1), and the conjecture stays **open**. |
 
 Supporting computation for the tangent theorem: an [exact check](tan-arctan-sum/RESULT.md) that tan(arctan 1 + ⋯ + arctan n) is not an integer for every 5 ≤ n ≤ 1.2·10⁸. It covers the members of E in that range, which the theorem leaves aside, including the twelve cases of Ono's Remark 3.3. The conjecture itself stays open.
 
@@ -33,6 +34,8 @@ Supporting computation for the tangent theorem: an [exact check](tan-arctan-sum/
 | --- | --- | --- |
 | [OEIS A135508, McEachen's conjecture](oeis-a135508/RESULT.md) | McEachen's conjecture (OEIS A135508, formal-conjectures `OeisA135508.conjecture`) says a(p − 1) = p for every prime p with p − 2 not prime. We prove it for every such p where p − 2 has a prime factor below 400, an infinite family, and so for every prime p < 160,000. Earlier checks went to p < 20,000. The key reduction is due to others (Cloitre, arXiv:2510.18891, and public Lean work), as credited. | **Proved** in Lean 4 + Mathlib, as a partial result. The remaining primes stay **open**. |
 | [OEIS A245212, squarefree odd part](oeis-a245212/RESULT.md) | The conjecture recorded in OEIS A245212 (formal-conjectures `OeisA245212.conjecture`) says a(n) = σ(n) exactly when n is a power of 2. We prove it when the odd part of n is squarefree. It is a short parity argument. We found no earlier proof, but it may be folklore. | **Proved** in Lean 4 + Mathlib, as a partial result. The other cases stay **open**. |
+| [OEIS A379397–A379400, sums of nine cubes](oeis-a379397/RESULT.md) | The numbers with exactly k = 2, 3, 4, 5 representations as a sum of at most nine positive cubes (A379397–A379400) are finite sets, and the listed terms are complete. This proves Greathouse's conjecture that 455 is the last term of A379399. For each k every such n is below 240 + (9k+1)³, by Dickson's theorem; an exhaustive count finishes it. A direct extension of Alper Ferudun's argument for A379396 (k = 1). The same method gives complete lists for every k ≤ 20. | **Proved**: the counting step in Lean 4 + Mathlib with Dickson's theorem (1939) as an explicit hypothesis; the finite part by exact computation in several independent programs. |
+| [OEIS A066494 and A066516, prime gaps and φ(n)](oeis-a066494/RESULT.md) | A066494 (prime(n+1) − prime(n) = φ(n)) is exactly {1, 3, 8, 9, 12, 18, 24}, and A066516 (g(σ(n)) = φ(n)) is exactly {1, 4, 5, 15, 18, 30, 36}, unconditionally. For A066516 the OEIS had this only on the Riemann hypothesis. For n ≥ 688,383, explicit bounds of Dusart and of Rosser–Schoenfeld force the gap below φ(n). The method is standard; the new part is only the explicit, complete closure. | **Proved**: the reduction in Lean 4 + Mathlib with the three published bounds as explicit hypotheses; n < 688,383 by exact computation in two independent programs. |
 
 ## Layout
 
@@ -49,6 +52,12 @@ VibesCodeMath/OeisA135508/   Challenge, Solution, Verify for the A135508 result
 oeis-a135508/          write-up and definition check
 VibesCodeMath/OeisA245212/   Challenge, Solution, Verify for the A245212 result
 oeis-a245212/          write-up, definition check and search code
+VibesCodeMath/CrystalUniqueness/   the Lean-checked reduction for the crystal conjecture, and Verify
+crystal-uniqueness/    write-up, written proofs (proofs/) and the certifying programs with logs (scripts/)
+VibesCodeMath/OeisA379397/   the counting step (Dickson's theorem as a hypothesis), and Verify
+oeis-a379397/          write-up and the counting programs with logs
+VibesCodeMath/OeisA066494/   Challenge, Solution, Verify for the A066494/A066516 reduction
+oeis-a066494/          write-up and the check programs with logs
 check.sh               reruns everything
 palomar/tan-arctan-explicit/   the headline theorem as a standalone package for the Palomar registry
 palomar/erdos707-niu-sets/     the Erdős 707 result as a standalone package for the Palomar registry
@@ -65,13 +74,13 @@ lake exe cache get   # download the Mathlib build cache
 lake build
 ```
 
-`lake build` prints the axioms of each result's `Verify.lean` check, and every one should read `[propext, Classical.choice, Quot.sound]`. The only `sorry`s are in the `Challenge.lean` files, which hold the statements on their own.
+`lake build` prints the axioms of each result's `Verify.lean` check, and every one should read `[propext, Classical.choice, Quot.sound]`. The only `sorry`s are in the `Challenge.lean` files, which hold the statements on their own. Some results take cited theorems as explicit hypotheses of the Lean statement (Dickson's theorem for A379397–A379400; Dusart's and Rosser–Schoenfeld's bounds for A066494/A066516). Those hypotheses are visible in the statements and are not axioms.
 
 Memory: the A135508 proof has the Lean kernel check a finite table, which needs about 10 GB of free memory. Everything else builds in ordinary memory.
 
 The headline theorem and the Erdős 707 result are also packaged on their own, in [`palomar/tan-arctan-explicit/`](palomar/tan-arctan-explicit/README.md) and [`palomar/erdos707-niu-sets/`](palomar/erdos707-niu-sets/README.md). Each package uses Lean v4.35.0 and Mathlib only, with formal-conjectures' definitions copied in verbatim, and is checked with `lake comparator` (see its README). Each is a separate Lake project from the one at the repository root.
 
-To rerun the computations as well, run `bash check.sh`. It needs a C compiler and Python 3.
+To rerun the computations as well, run `bash check.sh`. It needs a C compiler and Python 3. The crystal box programs take longer and are run separately (see [`crystal-uniqueness/RESULT.md`](crystal-uniqueness/RESULT.md)); they need mpmath and python-flint.
 
 ## What counts as a result here
 
