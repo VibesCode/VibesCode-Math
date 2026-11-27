@@ -1,3 +1,15 @@
+k=1 P=9 nodes=9 hits: 1
+k=2 P=35 nodes=60 hits: 24 26 87
+k=3 P=89 nodes=320 hits: 168 388 594 666
+k=4 P=175 nodes=1481 hits: 1998 2688 5698 5978 6786 7888
+k=5 P=289 nodes=6114 hits: 68796
+k=6 P=423 nodes=23105 hits:
+k=7 P=564 nodes=80966 hits:
+k=8 P=695 nodes=263092 hits:
+k=9 P=809 nodes=798687 hits:
+k=10 P=890 nodes=2244204 hits:
+k=11 P=939 nodes=5826051 hits:
+k=12 P=957 nodes=13953982 hits:
 k=13 P=943 nodes=30592690 hits:
 k=14 P=901 nodes=61359173 hits:
 k=15 P=842 nodes=112185469 hits:

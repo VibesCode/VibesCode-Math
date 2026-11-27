@@ -37,7 +37,7 @@ Let n ≥ 1 have k digits, and let P be the product of its digits. Suppose φ(n)
 | `gen_q.py` | all primes p > 7 with p − 1 7-smooth and p − 1 ≤ 9⁴¹ (list `q41.txt`) | |
 | `a058627.cpp` | the search of step 6, exact 128-bit integers | k = 1–36: `run_1_22.log`, `run_23_36.log` |
 | `second/search.cpp` (needs OpenSSL and OpenMP) | a separately written search: own prime list, 256-bit integers, its own prunes; covers k ≤ 41, so it does not need step 5 | k = 1–41: `second/run41.log` |
-| `third/search.cpp`, `third/gen_q.py`, `third/cbound.py` | a third, separately written search, prime list and constant | the saved log `third/search.log` covers k = 13–36 |
+| `third/search.cpp`, `third/gen_q.py`, `third/cbound.py` | a third, separately written search, prime list and constant | k = 1–36: `third/search.log` |
 | `second/brute.cpp` | direct brute force over n ≤ 10⁷ | |
 
 All of the searches find exactly the 15 known terms. The digit-product candidate counts of `a058627.cpp` and the third search agree for every k. The second program's counts agree too, except at k = 14 (902 vs 901). It used the constant 8.26 instead of 8.2586, which admits one extra, unneeded candidate.
