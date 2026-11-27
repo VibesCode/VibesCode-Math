@@ -41,6 +41,23 @@ Supporting computation for the tangent theorem: an [exact check](tan-arctan-sum/
 | [OEIS A066494 and A066516, prime gaps and φ(n)](oeis-a066494/RESULT.md) | A066494 (prime(n+1) − prime(n) = φ(n)) is exactly {1, 3, 8, 9, 12, 18, 24}, and A066516 (g(σ(n)) = φ(n)) is exactly {1, 4, 5, 15, 18, 30, 36}, unconditionally. For A066516 the OEIS had this only on the Riemann hypothesis. For n ≥ 688,383, explicit bounds of Dusart and of Rosser–Schoenfeld force the gap below φ(n). The method is standard; the new part is only the explicit, complete closure. | **Proved**: the reduction in Lean 4 + Mathlib with the three published bounds as explicit hypotheses; n < 688,383 by exact computation in two independent programs. |
 | [Sorting networks, Van Voorhis's recurrence](sorting-network-size/RESULT.md) | A Lean 4 formalization of Van Voorhis's 1972 recurrence for the size of sorting networks: s(n) ≥ s(n−1) + ⌈log₂ n⌉, where s(n) is the minimum number of comparators in a sorting network on n inputs. Combined with Harder's verified value s(11) = 35 (given as an explicit hypothesis), it yields the lower bounds s(12) ≥ 39, …, s(32) ≥ 135 listed in Dobbelaere's table. This is a formalization of a known theorem; it gives no new bound. We found no earlier formal proof of this recurrence. | **Proved** in Lean 4 + Mathlib (standard axioms); s(11) ≥ 35 is an explicit hypothesis. |
 
+### What each result cost to find
+
+Measured usage of the Claude sessions that worked on each result, including dead ends and checks. Shared work, such as rechecking every result, searching for problems and preparing this repository, is listed separately in [TOKENS.md](TOKENS.md), together with the per-model breakdown and exactly what each number covers.
+
+| Result | Claude models used | Tokens processed | Output tokens |
+| --- | --- | --- | --- |
+| Tangent sum, explicit n₀ = 5 | Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.2 | 45.6M | 490k |
+| Erdős 707 (Mueller's sets) | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 20.8M | 251k |
+| Huber's Sidon problem, s(16), s(17) | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 12.9M | 73k |
+| Crystal uniqueness (partial) | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 51.9M | 538k |
+| OEIS A135508 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 11.0M | 80k |
+| OEIS A245212 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 8.3M | 67k |
+| OEIS A120121–A120123 and A058627 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 14.5M | 164k |
+| OEIS A379397–A379400 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 5.0M | 56k |
+| OEIS A066494 / A066516 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 8.0M | 114k |
+| Sorting networks, Van Voorhis's recurrence | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 13.2M | 141k |
+
 ## Layout
 
 ```
@@ -70,6 +87,7 @@ oeis-a058627/          write-up and three search programs with logs (no Lean)
 VibesCodeMath/SortingSize/   Basic (definitions), Challenge, Solution, Verify for the sorting-network recurrence
 sorting-network-size/  write-up and an independent Python check with its output
 check.sh               reruns everything
+TOKENS.md              measured token usage and models for each result
 palomar/tan-arctan-explicit/   the headline theorem as a standalone package for the Palomar registry
 palomar/erdos707-mueller-sets/  the Erdős 707 result as a standalone package for the Palomar registry
                                (both: Lean v4.35.0, Mathlib only, checked with Comparator)
