@@ -65,6 +65,8 @@ Each cell is tokens processed, with the output tokens (written by the model, rea
 | Covering arrays CA(179; 3, 39, 4) and CA(216; 3, 11, 5) | **26.9M** (155k out) | 25.3M (111k out) | 0.9M (14k out) | 0.7M (30k out) | not used |
 | OEIS A226472 | **64.9M** (519k out) | 22.2M (86k out) | 40.8M (273k out) | 1.9M (160k out) | not used |
 
+The A226472 figure covers its whole working session, which may also include other problems looked at before it (see [TOKENS.md](TOKENS.md)).
+
 ## Layout
 
 ```
