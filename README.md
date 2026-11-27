@@ -43,20 +43,22 @@ Supporting computation for the tangent theorem: an [exact check](tan-arctan-sum/
 
 ### What each result cost to find
 
-Measured usage of the Claude sessions that worked on each result, including dead ends and checks. Shared work, such as rechecking every result, searching for problems and preparing this repository, is listed separately in [TOKENS.md](TOKENS.md), together with the per-model breakdown and exactly what each number covers.
+Measured usage of the Claude sessions that worked on each result, including dead ends and checks. Shared work, such as rechecking every result, searching for problems and preparing this repository, is listed separately in [TOKENS.md](TOKENS.md), which also says exactly what each number covers.
 
-| Result | Claude models used | Tokens processed | Output tokens |
-| --- | --- | --- | --- |
-| Tangent sum, explicit n₀ = 5 | Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.2 | 45.6M | 490k |
-| Erdős 707 (Mueller's sets) | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 20.8M | 251k |
-| Huber's Sidon problem, s(16), s(17) | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 12.9M | 73k |
-| Crystal uniqueness (partial) | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 51.9M | 538k |
-| OEIS A135508 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 11.0M | 80k |
-| OEIS A245212 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 8.3M | 67k |
-| OEIS A120121–A120123 and A058627 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 14.5M | 164k |
-| OEIS A379397–A379400 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 5.0M | 56k |
-| OEIS A066494 / A066516 | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 8.0M | 114k |
-| Sorting networks, Van Voorhis's recurrence | Opus 5.5, Sonnet 5.5, Haiku 5.5 | 13.2M | 141k |
+Each cell is tokens processed, with the output tokens (written by the model, reasoning included) in brackets.
+
+| Result | Total | Claude Opus 5.5 | Claude Sonnet 5.5 | Claude Haiku 5.5 | Claude Fable 5.2 |
+| --- | --- | --- | --- | --- | --- |
+| Tangent sum, explicit n₀ = 5 | **45.6M** (490k out) | 39.1M (287k out) | 5.3M (90k out) | 0.7M (87k out) | 0.6M (25k out) |
+| Erdős 707 (Mueller's sets) | **20.8M** (251k out) | 18.3M (170k out) | 2.0M (25k out) | 0.5M (55k out) | not used |
+| Huber's Sidon problem, s(16), s(17) | **12.9M** (73k out) | 11.3M (44k out) | 1.6M (24k out) | 0.1M (4k out) | not used |
+| Crystal uniqueness (partial) | **51.9M** (538k out) | 43.4M (343k out) | 7.8M (154k out) | 0.8M (42k out) | not used |
+| OEIS A135508 | **11.0M** (80k out) | 9.5M (61k out) | 1.4M (9k out) | 0.1M (11k out) | not used |
+| OEIS A245212 | **8.3M** (67k out) | 7.6M (56k out) | 0.7M (6k out) | 0.1M (5k out) | not used |
+| OEIS A120121–A120123 and A058627 | **14.5M** (164k out) | 11.9M (87k out) | 2.6M (73k out) | <0.1M (4k out) | not used |
+| OEIS A379397–A379400 | **5.0M** (56k out) | 3.4M (25k out) | 1.4M (17k out) | 0.2M (13k out) | not used |
+| OEIS A066494 / A066516 | **8.0M** (114k out) | 5.3M (48k out) | 2.5M (44k out) | 0.3M (22k out) | not used |
+| Sorting networks, Van Voorhis's recurrence | **13.2M** (141k out) | 10.9M (86k out) | 1.8M (21k out) | 0.4M (34k out) | not used |
 
 ## Layout
 
