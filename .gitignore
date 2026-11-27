@@ -1,0 +1,5 @@
+tan-arctan-sum/lean/TanArctan12.lean
+*.o
+a.out
+__pycache__/
+.lake/

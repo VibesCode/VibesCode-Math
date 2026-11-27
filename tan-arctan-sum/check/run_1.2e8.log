@@ -1,0 +1,5 @@
+CANDIDATE n=1 (Re(Q) = +-1 mod q1 and q2)
+CANDIDATE n=2 (Re(Q) = +-1 mod q1 and q2)
+CANDIDATE n=3 (Re(Q) = +-1 mod q1 and q2)
+CANDIDATE n=4 (Re(Q) = +-1 mod q1 and q2)
+N=120000000 candidates=4 zeroRe=0 hash=3f140c06304f51ff
