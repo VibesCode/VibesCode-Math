@@ -36,6 +36,8 @@ cc -O2 -o "$T/dp2" oeis-a379397/scripts/dp2.c
 cc -O2 -o "$T/check_b" oeis-a066494/scripts/check_b.c -lm
 "$T/check_b" 1000000 2>&1 | diff -q - oeis-a066494/scripts/check_b-1e6.log >/dev/null && echo "A066494/A066516 to 10^6: ok" || { echo "A066494 MISMATCH"; exit 1; }
 python3 oeis-a120121/scripts/enum_exact.py | grep "^A12012" | diff -q - <(grep "^A12012" oeis-a120121/scripts/enum_exact.log) >/dev/null && echo "A120121-A120123 exhaustive search: ok" || { echo "A120121 MISMATCH"; exit 1; }
+cq=$(python3 oeis-a058627/scripts/cq_exact.py); echo "$cq" | grep -q "C < 8.2586: True" && echo "A058627 constant C < 8.2586: ok" || { echo "A058627 constant FAILED"; exit 1; }
+g++ -O2 -o "$T/a058627" oeis-a058627/scripts/a058627.cpp && "$T/a058627" 1 8 oeis-a058627/scripts/q41.txt 2>&1 | grep "^k=" | diff -q - <(head -8 oeis-a058627/scripts/run_1_22.log) >/dev/null && echo "A058627 search k <= 8: ok" || { echo "A058627 search MISMATCH"; exit 1; }
 echo "== Huber Sidon witnesses =="
 python3 huber-sidon/code/check.py 16 huber-sidon/witnesses/s16.txt | grep -q "^OK n=16 |M_n|=157 |A|=83 Sidon" && echo "s(16) >= 83 witness: ok" || { echo "s16 witness FAILED"; exit 1; }
 python3 huber-sidon/code/check.py 17 huber-sidon/witnesses/s17.txt | grep -q "^OK n=17 |M_n|=193 |A|=96 Sidon" && echo "s(17) >= 96 witness: ok" || { echo "s17 witness FAILED"; exit 1; }

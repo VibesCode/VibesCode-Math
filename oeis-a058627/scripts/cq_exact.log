@@ -1,0 +1,2 @@
+tail t = 2.145647305267543e-09  C <= 8.258537383742317  C < 8.2586: True
+k allowed by 10^(k-1) <= 8.2586 * 9^k: max 41 ; all k <= max allowed: True

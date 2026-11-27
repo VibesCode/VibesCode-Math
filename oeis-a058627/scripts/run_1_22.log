@@ -1,0 +1,22 @@
+k=1 Pvalues=9 nodes=9 leaves=18 hits: 1
+k=2 Pvalues=35 nodes=60 leaves=119 hits: 26 24 87
+k=3 Pvalues=89 nodes=320 leaves=624 hits: 594 666 168 388
+k=4 Pvalues=175 nodes=1481 leaves=2862 hits: 5978 1998 5698 6786 2688 7888
+k=5 Pvalues=289 nodes=6114 leaves=11689 hits: 68796
+k=6 Pvalues=423 nodes=23105 leaves=43824 hits:
+k=7 Pvalues=564 nodes=80966 leaves=151933 hits:
+k=8 Pvalues=695 nodes=263092 leaves=489515 hits:
+k=9 Pvalues=809 nodes=798687 leaves=1471074 hits:
+k=10 Pvalues=890 nodes=2244204 leaves=4106747 hits:
+k=11 Pvalues=939 nodes=5826051 leaves=10606043 hits:
+k=12 Pvalues=957 nodes=13953982 leaves=25254534 hits:
+k=13 Pvalues=943 nodes=30592690 leaves=55159227 hits:
+k=14 Pvalues=901 nodes=61359173 leaves=110125307 hits:
+k=15 Pvalues=842 nodes=112185469 leaves=200238000 hits:
+k=16 Pvalues=775 nodes=186608712 leaves=330693370 hits:
+k=17 Pvalues=699 nodes=282123890 leaves=494680986 hits:
+k=18 Pvalues=619 nodes=387349562 leaves=668847342 hits:
+k=19 Pvalues=545 nodes=482023705 leaves=815570847 hits:
+k=20 Pvalues=474 nodes=542843843 leaves=897374330 hits:
+k=21 Pvalues=407 nodes=549805446 leaves=889371064 hits:
+k=22 Pvalues=348 nodes=508323643 leaves=800961777 hits:

@@ -1,0 +1,57 @@
+k=1 P_candidates=9 dfs_nodes=26 examined_k-digit_n_with_phi=P:9 terms=1 time=0.0s
+  TERM 1  VERIFIED phi=1 digprod=1 fac: 
+k=2 P_candidates=35 dfs_nodes=270 examined_k-digit_n_with_phi=P:70 terms=3 time=0.0s
+  TERM 24  VERIFIED phi=8 digprod=8 fac: 3^1 2^3 
+  TERM 26  VERIFIED phi=12 digprod=12 fac: 13^1 2^1 
+  TERM 87  VERIFIED phi=56 digprod=56 fac: 29^1 3^1 
+k=3 P_candidates=89 dfs_nodes=1909 examined_k-digit_n_with_phi=P:407 terms=4 time=0.0s
+  TERM 168  VERIFIED phi=48 digprod=48 fac: 7^1 3^1 2^3 
+  TERM 388  VERIFIED phi=192 digprod=192 fac: 97^1 2^2 
+  TERM 594  VERIFIED phi=180 digprod=180 fac: 11^1 3^3 2^1 
+  TERM 666  VERIFIED phi=216 digprod=216 fac: 37^1 3^2 2^1 
+k=4 P_candidates=175 dfs_nodes=9976 examined_k-digit_n_with_phi=P:1753 terms=6 time=0.0s
+  TERM 1998  VERIFIED phi=648 digprod=648 fac: 37^1 3^3 2^1 
+  TERM 2688  VERIFIED phi=768 digprod=768 fac: 7^1 3^1 2^7 
+  TERM 5698  VERIFIED phi=2160 digprod=2160 fac: 37^1 11^1 7^1 2^1 
+  TERM 5978  VERIFIED phi=2520 digprod=2520 fac: 61^1 7^2 2^1 
+  TERM 6786  VERIFIED phi=2016 digprod=2016 fac: 29^1 13^1 3^2 2^1 
+  TERM 7888  VERIFIED phi=3584 digprod=3584 fac: 29^1 17^1 2^4 
+k=5 P_candidates=289 dfs_nodes=39575 examined_k-digit_n_with_phi=P:5737 terms=1 time=0.0s
+  TERM 68796  VERIFIED phi=18144 digprod=18144 fac: 13^1 7^2 3^3 2^2 
+k=6 P_candidates=423 dfs_nodes=118973 examined_k-digit_n_with_phi=P:14337 terms=0 time=0.1s
+k=7 P_candidates=564 dfs_nodes=266442 examined_k-digit_n_with_phi=P:27008 terms=0 time=0.2s
+k=8 P_candidates=695 dfs_nodes=437203 examined_k-digit_n_with_phi=P:37167 terms=0 time=0.5s
+k=9 P_candidates=809 dfs_nodes=510771 examined_k-digit_n_with_phi=P:36953 terms=0 time=1.5s
+k=10 P_candidates=890 dfs_nodes=436151 examined_k-digit_n_with_phi=P:27198 terms=0 time=4.3s
+k=11 P_candidates=939 dfs_nodes=278961 examined_k-digit_n_with_phi=P:15592 terms=0 time=8.1s
+k=12 P_candidates=957 dfs_nodes=142492 examined_k-digit_n_with_phi=P:7280 terms=0 time=9.5s
+k=13 P_candidates=943 dfs_nodes=59084 examined_k-digit_n_with_phi=P:2617 terms=0 time=10.4s
+k=14 P_candidates=902 dfs_nodes=22499 examined_k-digit_n_with_phi=P:842 terms=0 time=10.4s
+k=15 P_candidates=842 dfs_nodes=4552 examined_k-digit_n_with_phi=P:142 terms=0 time=8.9s
+k=16 P_candidates=775 dfs_nodes=775 examined_k-digit_n_with_phi=P:0 terms=0 time=7.4s
+k=17 P_candidates=699 dfs_nodes=699 examined_k-digit_n_with_phi=P:0 terms=0 time=6.7s
+k=18 P_candidates=619 dfs_nodes=619 examined_k-digit_n_with_phi=P:0 terms=0 time=5.0s
+k=19 P_candidates=545 dfs_nodes=545 examined_k-digit_n_with_phi=P:0 terms=0 time=4.0s
+k=20 P_candidates=474 dfs_nodes=474 examined_k-digit_n_with_phi=P:0 terms=0 time=2.7s
+k=21 P_candidates=407 dfs_nodes=407 examined_k-digit_n_with_phi=P:0 terms=0 time=1.8s
+k=22 P_candidates=348 dfs_nodes=348 examined_k-digit_n_with_phi=P:0 terms=0 time=1.2s
+k=23 P_candidates=296 dfs_nodes=296 examined_k-digit_n_with_phi=P:0 terms=0 time=0.8s
+k=24 P_candidates=253 dfs_nodes=253 examined_k-digit_n_with_phi=P:0 terms=0 time=0.6s
+k=25 P_candidates=212 dfs_nodes=212 examined_k-digit_n_with_phi=P:0 terms=0 time=0.3s
+k=26 P_candidates=176 dfs_nodes=176 examined_k-digit_n_with_phi=P:0 terms=0 time=0.2s
+k=27 P_candidates=145 dfs_nodes=145 examined_k-digit_n_with_phi=P:0 terms=0 time=0.1s
+k=28 P_candidates=119 dfs_nodes=119 examined_k-digit_n_with_phi=P:0 terms=0 time=0.1s
+k=29 P_candidates=97 dfs_nodes=97 examined_k-digit_n_with_phi=P:0 terms=0 time=0.1s
+k=30 P_candidates=78 dfs_nodes=78 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=31 P_candidates=61 dfs_nodes=61 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=32 P_candidates=46 dfs_nodes=46 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=33 P_candidates=35 dfs_nodes=35 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=34 P_candidates=27 dfs_nodes=27 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=35 P_candidates=20 dfs_nodes=20 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=36 P_candidates=15 dfs_nodes=15 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=37 P_candidates=10 dfs_nodes=10 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=38 P_candidates=7 dfs_nodes=7 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=39 P_candidates=4 dfs_nodes=4 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=40 P_candidates=2 dfs_nodes=2 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+k=41 P_candidates=1 dfs_nodes=1 examined_k-digit_n_with_phi=P:0 terms=0 time=0.0s
+total time 85.1s
