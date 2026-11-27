@@ -50,6 +50,8 @@ cc -O2 -o "$T/seg2" oeis-a073614/scripts/seg2.c && h=$("$T/seg2" 0 200000000 0 |
 python3 erdos-261/scripts/verify_small.py 300 | grep -q "^ALL OK" && echo "Erdős 261(ii): exact representations for n <= 300: ok" || { echo "Erdős 261 small check FAILED"; exit 1; }
 cc -O2 -o "$T/e261mine" erdos-261/scripts/mine.c && e1=$("$T/e261mine" 2 10000) && echo "$e1" | grep -q "^range \[2,10000\] all ok" && ! echo "$e1" | grep -q "^FAIL" && echo "Erdős 261(ii) mine.c, n <= 10^4: ok" || { echo "Erdős 261 mine.c FAILED"; exit 1; }
 cc -O2 -o "$T/e261" erdos-261/scripts/e261.c && e2=$("$T/e261" 2 10000 1000000) && echo "$e2" | grep -q "nohit 0$" && echo "Erdős 261(ii) e261.c, n <= 10^4: ok" || { echo "Erdős 261 e261.c FAILED"; exit 1; }
+python3 oeis-a392801/scripts/verify.py | grep -q "^ALL OK" && echo "A392801/A262783: a(14) exact by the Moebius formula" || { echo "A392801 verify FAILED"; exit 1; }
+for p in sq1 sq2 sqscan; do cc -O2 -o "$T/$p" oeis-a392801/scripts/$p.c -lm && o=$("$T/$p" 0 100000000 0 0) && h=$(echo "$o" | grep -i "^hit" | grep -o "k=[0-9]*" | tr '\n' ' ') && [ "$h" = "k=1 k=14 k=87 k=204 k=215 k=2771 k=3514 k=4224 k=4933 k=63269 k=219430 " ] && echo "A392801 scan $p, x <= 10^8: ok" || { echo "A392801 scan $p MISMATCH"; exit 1; }; done
 sn=$(python3 sorting-network-size/scripts/check.py); echo "$sn" | diff -q - sorting-network-size/scripts/check.out >/dev/null && echo "Sorting networks: exact s(n), n <= 6, and random checks: ok" || { echo "Sorting networks check FAILED"; exit 1; }
 echo "== Huber Sidon witnesses =="
 python3 huber-sidon/code/check.py 16 huber-sidon/witnesses/s16.txt | grep -q "^OK n=16 |M_n|=157 |A|=83 Sidon" && echo "s(16) >= 83 witness: ok" || { echo "s16 witness FAILED"; exit 1; }
