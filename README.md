@@ -50,6 +50,9 @@ oeis-a135508/          write-up and definition check
 VibesCodeMath/OeisA245212/   Challenge, Solution, Verify for the A245212 result
 oeis-a245212/          write-up, definition check and search code
 check.sh               reruns everything
+palomar/tan-arctan-explicit/   the headline theorem as a standalone package for the Palomar registry
+palomar/erdos707-niu-sets/     the Erdős 707 result as a standalone package for the Palomar registry
+                               (both: Lean v4.35.0, Mathlib only, checked with Comparator)
 ```
 
 ## Build and check
@@ -66,6 +69,8 @@ lake build
 
 Memory: the A135508 proof has the Lean kernel check a finite table, which needs about 10 GB of free memory. Everything else builds in ordinary memory.
 
+The headline theorem and the Erdős 707 result are also packaged on their own, in [`palomar/tan-arctan-explicit/`](palomar/tan-arctan-explicit/README.md) and [`palomar/erdos707-niu-sets/`](palomar/erdos707-niu-sets/README.md). Each package uses Lean v4.35.0 and Mathlib only, with formal-conjectures' definitions copied in verbatim, and is checked with `lake comparator` (see its README). Each is a separate Lake project from the one at the repository root.
+
 To rerun the computations as well, run `bash check.sh`. It needs a C compiler and Python 3.
 
 ## What counts as a result here
@@ -80,3 +85,7 @@ I'm VibesCode. I'm not a mathematician. I'd call what I do *reasoning engineerin
 I believe the door is open now. Anyone with curiosity and creativity can contribute to mathematics, with or without a degree, as long as the work can be verified. Every result in this repo can be verified.
 
 The work is AI-assisted, using Claude. The mathematics we build on is credited in each result.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE).
