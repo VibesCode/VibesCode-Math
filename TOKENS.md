@@ -12,7 +12,7 @@ Figures come from the usage records of the Claude sessions that worked on each r
 | --- | --- | --- | --- | --- |
 | Tangent sum, explicit n₀ = 5 | 45.6M | 490k | Opus 5.5 39.1M (287k out); Sonnet 5.5 5.3M (90k out); Haiku 5.5 0.7M (87k out); Fable 5.2 0.6M (25k out) | two working sessions |
 | Erdős 707 (Mueller's sets) | 20.8M | 251k | Opus 5.5 18.3M (170k out); Sonnet 5.5 2.0M (25k out); Haiku 5.5 0.5M (55k out) |  |
-| Huber's Sidon problem, s(16), s(17) | 12.9M | 73k | Opus 5.5 11.3M (44k out); Sonnet 5.5 1.6M (24k out); Haiku 5.5 0.1M (4k out) | the same session is still working on s(18); the figure includes that work so far |
+| Huber's Sidon problem, s(16), s(17), s(18) | 19.4M | 85k | Opus 5.5 17.8M (57k out); Sonnet 5.5 1.6M (24k out); Haiku 5.5 0.1M (4k out) | one session, all three values; read 2026-11-27 at 18:13 UTC |
 | Crystal uniqueness (partial) | 51.9M | 538k | Opus 5.5 43.4M (343k out); Sonnet 5.5 7.8M (154k out); Haiku 5.5 0.8M (42k out) | two working sessions |
 | OEIS A135508 | 11.0M | 80k | Opus 5.5 9.5M (61k out); Sonnet 5.5 1.4M (9k out); Haiku 5.5 0.1M (11k out) |  |
 | OEIS A245212 | 8.3M | 67k | Opus 5.5 7.6M (56k out); Sonnet 5.5 0.7M (6k out); Haiku 5.5 0.1M (5k out) |  |
