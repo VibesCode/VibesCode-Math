@@ -1,5 +1,9 @@
-import Mathlib
-import FormalConjectures.Arxiv.«2607.05739».TanArctanSum
+module
+
+public import Mathlib
+public import FormalConjectures.Arxiv.«2607.05739».TanArctanSum
+
+@[expose] public section
 
 /-!
 # Explicit form of Ono's Corollary 1.2 for x_n = tan(arctan 1 + ⋯ + arctan n)

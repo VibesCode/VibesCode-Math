@@ -1,4 +1,8 @@
-import FormalConjectures.OEIS.«245212»
+module
+
+public import FormalConjectures.OEIS.«245212»
+
+@[expose] public section
 
 /-! Challenge: the statement only. The proof is in `Solution.lean`. -/
 

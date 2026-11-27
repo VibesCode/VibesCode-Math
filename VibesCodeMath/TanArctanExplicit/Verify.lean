@@ -1,4 +1,8 @@
-import VibesCodeMath.TanArctanExplicit.Solution
+module
+
+public import VibesCodeMath.TanArctanExplicit.Solution
+
+@[expose] public section
 
 /-! Restates the claim of `Challenge.lean` word for word and checks that `Solution.lean` proves it,
 using only the standard axioms (propext, Classical.choice, Quot.sound). -/

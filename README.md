@@ -23,8 +23,9 @@ This list grows as new results pass their checks. Each one states exactly what i
 | Result | Claim | Status |
 | --- | --- | --- |
 | [Explicit Ono Corollary 1.2](tan-arctan-explicit/RESULT.md) | For n ≥ 5 outside E, tan(arctan 1 + ⋯ + arctan n) is not an integer. | **Proved** in Lean 4 + Mathlib |
+| [Erdős 707, Niu's four-element sets](erdos-707/RESULT.md) | Niu's candidate sets {0,1,3,11} and {0,1,4,11} lie in no perfect difference set of even order, and {0,1,3,11} lies in none whose order is divisible by 3. This holds for any modulus, with no prime-power or Desarguesian assumption. Includes a Lean proof of Hall's multiplier theorem for planar difference sets. The question and the sets are Niu's (arXiv:2604.25214). The even case for {0,1,3,11} was asserted without proof by Mueller (MathOverflow 502053). The methods are classical (Baer, Hall), following Alexeev and Mixon. | **Proved** in Lean 4 + Mathlib, as a partial result. The four-element question stays **open**. |
 
-Supporting computation: an [exact check](tan-arctan-sum/RESULT.md) that tan(arctan 1 + ⋯ + arctan n) is not an integer for every 5 ≤ n ≤ 1.2·10⁸. It covers the members of E in that range, which the theorem leaves aside, including the twelve cases of Ono's Remark 3.3. The conjecture itself stays open.
+Supporting computation for the tangent theorem: an [exact check](tan-arctan-sum/RESULT.md) that tan(arctan 1 + ⋯ + arctan n) is not an integer for every 5 ≤ n ≤ 1.2·10⁸. It covers the members of E in that range, which the theorem leaves aside, including the twelve cases of Ono's Remark 3.3. The conjecture itself stays open.
 
 ### Smaller results
 
@@ -42,6 +43,8 @@ VibesCodeMath/TanArctanExplicit/
   Verify.lean      restates the claim, proves it from Solution.lean, prints the axioms used
 tan-arctan-explicit/   write-up, plus scripts that check the definitions and show where the constants came from
 tan-arctan-sum/        the exact computation to 1.2·10⁸: C and Python code, logs
+VibesCodeMath/Erdos707/      Challenge, Solution, Verify for the Erdős 707 result
+erdos-707/             write-up and a check that the definition is satisfiable
 VibesCodeMath/OeisA135508/   Challenge, Solution, Verify for the A135508 result
 oeis-a135508/          write-up and definition check
 VibesCodeMath/OeisA245212/   Challenge, Solution, Verify for the A245212 result

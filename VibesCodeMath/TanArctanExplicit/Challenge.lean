@@ -1,4 +1,8 @@
-import FormalConjectures.Arxiv.«2607.05739».TanArctanSum
+module
+
+public import FormalConjectures.Arxiv.«2607.05739».TanArctanSum
+
+@[expose] public section
 
 /-! Challenge: the statement only. The proof is in `Solution.lean`. -/
 

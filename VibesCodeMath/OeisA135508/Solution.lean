@@ -1,4 +1,8 @@
-import FormalConjectures.OEIS.«135508»
+module
+
+public import FormalConjectures.OEIS.«135508»
+
+@[expose] public section
 
 namespace OeisA135508
 

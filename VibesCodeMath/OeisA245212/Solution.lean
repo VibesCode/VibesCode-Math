@@ -1,4 +1,8 @@
-import FormalConjectures.OEIS.«245212»
+module
+
+public import FormalConjectures.OEIS.«245212»
+
+@[expose] public section
 
 /-!
 # A245212: a(n) = σ(n) iff n is a power of 2, when the odd part of n is squarefree

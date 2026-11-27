@@ -13,6 +13,10 @@ for t in a135508_family_check a135508_bounded_check; do
   echo "$out" | grep -q "'$t' depends on axioms: \[propext, Classical.choice, Quot.sound\]" \
     && echo "A135508 ($t): ok, standard axioms only" || { echo "A135508 $t: unexpected axioms"; exit 1; }
 done
+for t in erdos707_even_order_check erdos707_order_div_two_or_three_check; do
+  echo "$out" | grep -q "'$t' depends on axioms: \[propext, Classical.choice, Quot.sound\]" \
+    && echo "Erdős 707 ($t): ok, standard axioms only" || { echo "Erdős 707 $t: unexpected axioms"; exit 1; }
+done
 python3 oeis-a135508/scripts/fidelity.py | diff -q - oeis-a135508/scripts/fidelity.out >/dev/null && echo "A135508 definition check: ok"
 python3 oeis-a245212/scripts/fidelity.py | diff -q - oeis-a245212/scripts/fidelity.out >/dev/null && echo "A245212 definition check: ok"
 echo "== Definitions match Ono's paper =="
