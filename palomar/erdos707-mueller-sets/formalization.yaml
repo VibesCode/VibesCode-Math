@@ -2,13 +2,13 @@
 version: "v0.4"
 
 project:
-  name: "Niu's candidate counterexamples to Erdős Problem 707 in cyclic planes of order divisible by 2 or 3"
+  name: "Mueller's four-element candidate counterexamples to Erdős Problem 707 in cyclic planes of order divisible by 2 or 3"
   description: >-
     Erdős Problem 707 asks whether every finite Sidon set of natural numbers is contained in a
-    perfect difference set. Every Sidon set of size 3 extends (Sawin), and Niu
-    (arXiv:2604.25214) proposed {0,1,3,11} and {0,1,4,11} as size-4 counterexamples; Mueller
-    showed they fail in every Singer (Desarguesian) difference set, but whether they extend to a
-    non-Desarguesian cyclic plane is open. This formalization proves, in Lean 4 with Mathlib and
+    perfect difference set. Every Sidon set of size 3 extends (Sawin). For size 4, Mueller
+    (MathOverflow answer 502053) found {0,1,3,11} and {0,1,4,11} and showed that neither lies in
+    any Singer (Desarguesian) difference set, but whether they extend to a non-Desarguesian
+    cyclic plane is open. This formalization proves, in Lean 4 with Mathlib and
     only the standard axioms, two restrictions that need no assumption on the plane: (1) neither
     set lies in a perfect difference set of even order (any modulus n), by Baer's
     argument that 2 is then a multiplier; (2) {0,1,3,11} lies in no finite perfect difference set whose order is divisible by
@@ -35,29 +35,19 @@ sources:
     relationship: "background"
     note: "The problem: does every finite Sidon set extend to a perfect difference set?"
     author_endorsement: "n/a"
-  - title: "Size-4 Counterexamples to the Sidon-Extension Conjecture"
-    authors:
-      - "Tong Niu"
-    id: "arXiv:2604.25214"
-    type: "paper"
-    location: "https://arxiv.org/abs/2604.25214"
-    relationship: "background"
-    note: >-
-      Source of the two candidate sets {0,1,3,11} and {0,1,4,11}. The paper (v1, v2) gives
-      computational evidence and lists polarity and multiplier arguments as open routes; v3 was
-      withdrawn in favour of Mueller's MathOverflow answer.
-    author_endorsement: "not-contacted"
-  - title: "MathOverflow question 501983, answer 502053 (Remark 2)"
+  - title: "MathOverflow question 501983, answer 502053"
     authors:
       - "Peter Mueller"
     id: "https://mathoverflow.net/a/502053"
     type: "web discussion"
     relationship: "formalizes"
     note: >-
-      Remark 2 states without proof, for {0,1,3,11}, that "the Hall-Baer arguments" force the order
-      q to be odd. Theorem (1) proves this observation, and the same statement for {0,1,4,11}.
-      The answer also proves, by resultants, that both sets fail in every Singer difference set;
-      that is a different restriction (plane type rather than order) and is not formalized here.
+      Source of both sets (October 2025): the answer proves that {0,1,3,11} lies in no Singer
+      difference set, and Remark 1 gives {0,1,4,11} as the only other such case (up to multiples)
+      in a computer search, with a proof along a variant of Sawin's sketch. Remark 2 notes, for
+      {0,1,3,11}, that the Hall-Baer arguments of Alexeev and Mixon's preprint force the order q
+      to be odd. Theorem (1) gives a full proof of that observation, and the same statement for
+      {0,1,4,11}. The Singer-type restriction is not formalized here.
       In the same thread Mueller wrote that he did not see whether Hall's multiplier theorem helps;
       no written argument for orders divisible by 3 was found.
     author_endorsement: "not-contacted"
@@ -79,7 +69,7 @@ sources:
     relationship: "adapts"
     note: >-
       Their use of Baer's polarity facts for even and odd order (for {1,2,4,8} and {1,2,4,8,13})
-      is the method of Theorem (1), applied here to Niu's sets.
+      is the method of Theorem (1), applied here to Mueller's sets.
     author_endorsement: "not-contacted"
   - title: "Polarities in finite projective planes"
     authors:
@@ -97,6 +87,17 @@ sources:
     relationship: "background"
     note: "Hall's multiplier theorem, proved in Lean here for planar difference sets and used in Theorem (2)."
     author_endorsement: "n/a"
+  - title: "Size-4 Counterexamples to the Sidon-Extension Conjecture (withdrawn)"
+    authors:
+      - "Tong Niu"
+    id: "arXiv:2604.25214"
+    type: "paper"
+    location: "https://arxiv.org/abs/2604.25214"
+    relationship: "background"
+    note: >-
+      A 2026 preprint proposing the same two sets, withdrawn in v3 (May 2026) because Mueller's
+      MathOverflow answer had already treated them. Listed for completeness only.
+    author_endorsement: "not-contacted"
   - title: "formal-conjectures: FormalConjecturesForMathlib/Data/ZMod/PerfectDifferenceSet.lean"
     authors:
       - "The Formal Conjectures Authors"
@@ -146,24 +147,24 @@ review:
   reviewers:
     - "none (no human expert review)"
   notes: >-
-    The formal statements were compared against Niu's sets and Mueller's Remark 2. The proofs'
+    The formal statements were compared against Mueller's answer (both sets, Remark 2). The proofs'
     correctness rests on the Lean check. No human mathematician has reviewed them.
 
 alignment:
   namespace: "(root)"
   statements:
     - source: "Mueller, MathOverflow answer 502053, Remark 2 (even order), extended to {0,1,4,11}"
-      lean: "niu_sets_not_in_even_order_pds"
+      lean: "sets_0_1_3_11_and_0_1_4_11_not_in_even_order_pds"
       module: "Challenge"
       status: "proved"
       note: "Stated by Mueller for {0,1,3,11} without proof."
     - source: "new: orders divisible by 3 via Hall's multiplier theorem"
-      lean: "niu_set_not_in_pds_of_order_div_two_or_three"
+      lean: "set_0_1_3_11_not_in_pds_of_order_div_two_or_three"
       module: "Challenge"
       status: "proved"
       note: "Covers orders divisible by 2 or 3 for {0,1,3,11}."
 
 acknowledgements: >-
-  Mathlib; google-deepmind/formal-conjectures for the definition; Tong Niu, Peter Mueller,
+  Mathlib; google-deepmind/formal-conjectures for the definition; Peter Mueller,
   Will Sawin, Boris Alexeev and Dustin Mixon, Reinhold Baer and Marshall Hall Jr. for the
   mathematics this builds on.

@@ -60,7 +60,7 @@ VibesCodeMath/OeisA066494/   Challenge, Solution, Verify for the A066494/A066516
 oeis-a066494/          write-up and the check programs with logs
 check.sh               reruns everything
 palomar/tan-arctan-explicit/   the headline theorem as a standalone package for the Palomar registry
-palomar/erdos707-niu-sets/     the Erdős 707 result as a standalone package for the Palomar registry
+palomar/erdos707-mueller-sets/  the Erdős 707 result as a standalone package for the Palomar registry
                                (both: Lean v4.35.0, Mathlib only, checked with Comparator)
 ```
 
@@ -78,7 +78,7 @@ lake build
 
 Memory: the A135508 proof has the Lean kernel check a finite table, which needs about 10 GB of free memory. Everything else builds in ordinary memory.
 
-The headline theorem and the Erdős 707 result are also packaged on their own, in [`palomar/tan-arctan-explicit/`](palomar/tan-arctan-explicit/README.md) and [`palomar/erdos707-niu-sets/`](palomar/erdos707-niu-sets/README.md). Each package uses Lean v4.35.0 and Mathlib only, with formal-conjectures' definitions copied in verbatim, and is checked with `lake comparator` (see its README). Each is a separate Lake project from the one at the repository root.
+The headline theorem and the Erdős 707 result are also packaged on their own, in [`palomar/tan-arctan-explicit/`](palomar/tan-arctan-explicit/README.md) and [`palomar/erdos707-mueller-sets/`](palomar/erdos707-mueller-sets/README.md). Each package uses Lean v4.35.0 and Mathlib only, with formal-conjectures' definitions copied in verbatim, and is checked with `lake comparator` (see its README). Each is a separate Lake project from the one at the repository root.
 
 To rerun the computations as well, run `bash check.sh`. It needs a C compiler and Python 3. The crystal box programs take longer and are run separately (see [`crystal-uniqueness/RESULT.md`](crystal-uniqueness/RESULT.md)); they need mpmath and python-flint.
 
