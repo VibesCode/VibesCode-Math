@@ -1,0 +1,7 @@
+odd primes below 20000000000: 882206715
+END LIM=20000000000
+
+real	3m9.488s
+user	6m14.823s
+sys	0m1.009s
+EXIT 0

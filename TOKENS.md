@@ -22,6 +22,7 @@ Figures come from the usage records of the Claude sessions that worked on each r
 | Sorting networks, Van Voorhis's recurrence | 13.2M | 141k | Opus 5.5 10.9M (86k out); Sonnet 5.5 1.8M (21k out); Haiku 5.5 0.4M (34k out) |  |
 | Covering arrays CA(179; 3, 39, 4) and CA(216; 3, 11, 5) | 26.9M | 155k | Opus 5.5 25.3M (111k out); Sonnet 5.5 0.9M (14k out); Haiku 5.5 0.7M (30k out) | one session found both; not separable; read 2026-11-27 at 13:44 UTC |
 | OEIS A226472, A073614, A392801, A262783 and A224241 | 73.8M | 569k | Opus 5.5 30.3M (119k out); Sonnet 5.5 41.5M (279k out); Haiku 5.5 2.0M (171k out) | one session found all four results, and also worked on other problems with no result here; whole session, not separable; read 2026-11-27 at 22:31 UTC |
+| Sun's p + 2^x + k·2^y, k = 47 | 24.7M | 122k | Opus 5.5 21.2M (92k out); Sonnet 5.5 3.3M (24k out); Haiku 5.5 0.2M (5k out) | whole working session, which also tested other OEIS claims with no result here; read 2026-11-27 at 22:56 UTC |
 | Erdős 261(ii), n ≤ 10^6 | 17.5M | 95k | Opus 5.5 15.3M (69k out); Sonnet 5.5 2.1M (21k out); Haiku 5.5 0.1M (5k out) | whole working session, which may include other work; read 2026-11-27 at 19:29 UTC |
 
 ## Shared work, not split between results

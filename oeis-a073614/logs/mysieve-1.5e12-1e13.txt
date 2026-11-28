@@ -1,0 +1,9 @@
+pass 1 done
+pi(HI)=346065536839
+HIT m=332955594488 p=9607832872831 root=1788569737504
+pass 2 done
+
+real	283m3.265s
+user	712m58.279s
+sys	0m2.792s
+EXIT 0

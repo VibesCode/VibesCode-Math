@@ -1,0 +1,7 @@
+sieve done
+NOREP 13
+DONE k=5 cls=0 N in [13,10000000000] odd, count 1
+
+real	2m35.854s
+user	4m59.546s
+sys	0m0.363s
