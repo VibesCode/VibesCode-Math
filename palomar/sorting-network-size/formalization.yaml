@@ -1,0 +1,132 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Van Voorhis's recurrence for the size of sorting networks, in Lean"
+  description: >-
+    Let s(n) be the minimum number of comparators in a sorting network on n inputs. Van
+    Voorhis (IEEE Trans. Comput. C-21(6), 1972, pp. 612–613) proved s(n) ≥ s(n−1) + ⌈log₂ n⌉, the recurrence
+    behind the standard lower bounds for sorting-network size. This project proves it in
+    Lean 4 with Mathlib and only the standard axioms, for standard comparator networks that sort
+    every input of natural numbers: if every such network on m wires has at least k
+    comparators, then every such network on m + 1 wires has at least k + ⌈log₂(m + 1)⌉. The
+    proof follows the minimum element through the network, uses a Kraft-type count to find a
+    starting wire whose path meets at least ⌈log₂ n⌉ comparators, removes that wire and the
+    comparators on its path, and untangles the rest into a standard network. As a corollary,
+    from Harder's verified value s(11) ≥ 35 (taken as an explicit hypothesis) it derives the
+    lower bounds s(12) ≥ 39, …, s(32) ≥ 135 listed in Dobbelaere's table. This is a
+    formalization of a known theorem; it gives no new bound. We found no earlier formal proof
+    of the recurrence.
+  authors:
+    - "VibesCode"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "VibesCode"
+
+classification:
+  arxiv: ["cs.DM", "math.CO"]
+  msc2020: ["68P10", "68R05", "05C05"]
+
+sources:
+  - title: "An Improved Lower Bound for Sorting Networks"
+    authors:
+      - "David C. Van Voorhis"
+    id: "doi:10.1109/TC.1972.5009021"
+    type: "paper"
+    relationship: "formalizes"
+    note: >-
+      The one-wire recurrence s(n) ≥ s(n−1) + ⌈log₂ n⌉. A different, two-wire inequality from Van
+      Voorhis's 1972 work ("Toward a Lower Bound for Sorting Networks", doi:10.1007/978-1-4684-2001-2_12)
+      is not used or formalized here.
+    author_endorsement: "not-contacted"
+  - title: "An Answer to the Bose-Nelson Sorting Problem for 11 and 12 Channels"
+    authors:
+      - "Jannis Harder"
+    id: "arXiv:2012.04400"
+    type: "paper"
+    location: "https://arxiv.org/abs/2012.04400"
+    relationship: "background"
+    note: >-
+      Proves s(11) = 35 and s(12) = 39 with a certificate checked by an Isabelle/HOL-verified
+      checker; its Lemma 17 states the recurrence and credits Van Voorhis. The value s(11) ≥ 35 enters only as the explicit
+      hypothesis of SortNet.bounds_from_s11.
+    author_endorsement: "not-contacted"
+  - title: "The Art of Computer Programming, Vol. 3: Sorting and Searching, §5.3.4"
+    authors:
+      - "Donald E. Knuth"
+    type: "book"
+    relationship: "background"
+    note: "Textbook account of sorting networks and of untangling to standard form."
+    author_endorsement: "n/a"
+  - title: "Smallest and fastest sorting networks (table)"
+    authors:
+      - "Bert Dobbelaere"
+    id: "https://bertdobbelaere.github.io/sorting_networks.html"
+    type: "web discussion"
+    relationship: "background"
+    note: "The lower bounds for n = 12..32 derived here are the values in this table (as of Nov 2026)."
+    author_endorsement: "not-contacted"
+
+related_formalizations:
+  - id: "https://github.com/jix/sortnetopt"
+    relationship: "other"
+    note: "Harder's Isabelle/HOL-verified certificate checker for s(11) = 35; it does not formalize this recurrence."
+
+status:
+  scope: >-
+    Proved: the recurrence for all m and k, and the conditional bounds s(12..32) ≥ 39, 43, …, 135
+    from the hypothesis s(11) ≥ 35. Not proved here: s(11) ≥ 35 itself (cited, Harder 2020), and
+    any bound better than the recurrence gives.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude (Anthropic)"]
+      framework: "n/a"
+      tool_setup: "AI-assisted: the proof was written with AI assistance (Claude) and is checked by Lean 4 with Mathlib."
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    AI-assisted using Claude models, directed by VibesCode. The proof was written with AI
+    assistance and is checked by Lean.
+
+fidelity:
+  divergences: >-
+    Networks are restricted to standard comparators (minimum to the lower-indexed wire), the
+    usual definition of s(n); untangling shows this loses nothing for size. Sorting is required
+    for every input of natural numbers, which is equivalent to sorting every 0-1 input.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none (no human expert review)"
+  notes: >-
+    No human mathematician has reviewed the proof; correctness rests on the Lean kernel check
+    (and Palomar's independent kernels). Before publication the work also went through an
+    automated, AI-based recheck (Claude): a second, independently written formal statement
+    proved equivalent in Lean, a rebuild with #print axioms, a hand recomputation of the
+    corollary values 39, …, 135 from ⌈log₂ n⌉, and an independent Python computation of s(n) for
+    n ≤ 6 that confirms the recurrence on those values. That recheck is not a human review, and
+    it adds nothing to the kernel check beyond the comparison of the statement with the
+    literature.
+
+alignment:
+  namespace: "SortNet"
+  statements:
+    - source: "Van Voorhis (1972): s(n) ≥ s(n−1) + ⌈log₂ n⌉"
+      lean: "van_voorhis_recurrence"
+      module: "Challenge"
+      status: "full"
+      note: "Stated as: k ≤ s(m) implies k + ⌈log₂(m+1)⌉ ≤ s(m+1), with Nat.clog 2 for ⌈log₂⌉."
+    - source: "Dobbelaere's table, lower bounds for n = 12..32, given s(11) ≥ 35 (Harder 2020)"
+      lean: "SortNet.bounds_from_s11"
+      module: "Challenge"
+      status: "conditional"
+      note: "s(11) ≥ 35 is an explicit hypothesis."
+
+acknowledgements: >-
+  Mathlib; David C. Van Voorhis for the recurrence; Jannis Harder for s(11) = 35; Bert
+  Dobbelaere for the table of bounds.
