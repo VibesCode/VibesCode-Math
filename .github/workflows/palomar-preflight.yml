@@ -1,0 +1,14 @@
+on:
+  push:
+    branches: [palomar-preflight]
+jobs:
+  palomar-preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@952cc3697b3f335c6cc0c21932e55ee92921dd35
+    with:
+      repository: VibesCode/VibesCode-Math
+      commit: 39bfe08fc271c19a4aadf7892b195b1db789f8ce
+      pipeline_commit: 952cc3697b3f335c6cc0c21932e55ee92921dd35
+      request_id: pf39bfe08fc2
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: '{"comparator_config_path": "palomar/a135508-partial/comparator.json", "project_path": "palomar/a135508-partial", "authorization_relationship": "I am a responsible author or maintainer"}'
