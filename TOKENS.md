@@ -25,6 +25,7 @@ Figures come from the usage records of the Claude sessions that worked on each r
 | Sun's p + 2^x + k·2^y, k = 47 | 24.7M | 122k | Opus 5.5 21.2M (92k out); Sonnet 5.5 3.3M (24k out); Haiku 5.5 0.2M (5k out) | whole working session, which also tested other OEIS claims with no result here; read 2026-11-27 at 22:56 UTC |
 | OEIS A263546, A263076 and A153022 | 30.5M | 94k | Opus 5.5 30.5M (94k out) | one session found all three, and also scanned other entries with no result here; whole session, not separable; read 2026-11-28 at 08:59 UTC |
 | Erdős 261(ii), n ≤ 10^6 | 17.5M | 95k | Opus 5.5 15.3M (69k out); Sonnet 5.5 2.1M (21k out); Haiku 5.5 0.1M (5k out) | whole working session, which may include other work; read 2026-11-27 at 19:29 UTC |
+| Erdős 686 and 677 search bounds | 13.0M | 87k | Opus 5.5 10.9M (70k out); Sonnet 5.5 2.1M (16k out); Haiku 5.5 <0.1M (1k out) | whole working session, which may include other work; read 2026-11-28 at 19:21 UTC |
 
 ## Shared work, not split between results
 

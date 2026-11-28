@@ -1,0 +1,15 @@
+677 k=3: period 2, |R| 2, periodicity spot-check bad 0, ratios 1, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 0s
+677 k=4: period 6, |R| 2, periodicity spot-check bad 0, ratios 1, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 0s
+677 k=5: period 12, |R| 6, periodicity spot-check bad 0, ratios 7, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 1s
+677 k=6: period 60, |R| 4, periodicity spot-check bad 0, ratios 4, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 0s
+677 k=7: period 60, |R| 12, periodicity spot-check bad 0, ratios 22, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 1s
+677 k=8: period 420, |R| 8, periodicity spot-check bad 0, ratios 13, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 2s
+677 k=9: period 840, |R| 16, periodicity spot-check bad 0, ratios 31, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 3s
+677 k=10: period 2520, |R| 18, periodicity spot-check bad 0, ratios 37, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 5s
+677 k=11: period 2520, |R| 48, periodicity spot-check bad 0, ratios 157, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 11s
+677 k=12: period 27720, |R| 32, periodicity spot-check bad 0, ratios 121, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 17s
+677 k=13: period 27720, |R| 96, periodicity spot-check bad 0, ratios 472, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 45s
+677 k=14: period 360360, |R| 72, periodicity spot-check bad 0, ratios 337, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 60s
+677 k=15: period 360360, |R| 64, periodicity spot-check bad 0, ratios 283, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 36s
+677 k=16: period 360360, |R| 48, periodicity spot-check bad 0, ratios 202, product sols (m>=n+k) 0, equal-lcm [], direct n<=1000 []; 50s
+EXIT 0

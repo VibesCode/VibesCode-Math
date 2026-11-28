@@ -1,0 +1,14 @@
+677 k=3: |R-values| 2 (formula vs lcm mismatches over full period: 0); ratios 1; product-ratio sols 0; equal-lcm []; 0s
+677 k=4: |R-values| 2 (formula vs lcm mismatches over full period: 0); ratios 1; product-ratio sols 0; equal-lcm []; 0s
+677 k=5: |R-values| 6 (formula vs lcm mismatches over full period: 0); ratios 7; product-ratio sols 0; equal-lcm []; 1s
+677 k=6: |R-values| 4 (formula vs lcm mismatches over full period: 0); ratios 4; product-ratio sols 0; equal-lcm []; 0s
+677 k=7: |R-values| 12 (formula vs lcm mismatches over full period: 0); ratios 22; product-ratio sols 0; equal-lcm []; 3s
+677 k=8: |R-values| 8 (formula vs lcm mismatches over full period: 0); ratios 13; product-ratio sols 0; equal-lcm []; 5s
+677 k=9: |R-values| 16 (formula vs lcm mismatches over full period: 0); ratios 31; product-ratio sols 0; equal-lcm []; 13s
+677 k=10: |R-values| 18 (formula vs lcm mismatches over full period: 0); ratios 37; product-ratio sols 0; equal-lcm []; 18s
+677 k=11: |R-values| 48 (formula vs lcm mismatches over full period: 0); ratios 157; product-ratio sols 0; equal-lcm []; 57s
+677 k=12: |R-values| 32 (formula vs lcm mismatches over full period: 0); ratios 121; product-ratio sols 0; equal-lcm []; 103s
+677 k=13: |R-values| 96 (formula vs lcm mismatches over full period: 0); ratios 472; product-ratio sols 0; equal-lcm []; 265s
+677 k=14: |R-values| 72 (formula vs lcm mismatches over full period: 0); ratios 337; product-ratio sols 0; equal-lcm []; 474s
+677 k=15: |R-values| 64 (formula vs lcm mismatches over full period: 0); ratios 283; product-ratio sols 0; equal-lcm []; 251s
+677 k=16: |R-values| 48 (formula vs lcm mismatches over full period: 0); ratios 202; product-ratio sols 0; equal-lcm []; 393s

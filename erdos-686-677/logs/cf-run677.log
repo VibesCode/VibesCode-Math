@@ -1,0 +1,11 @@
+control: rational targets u/v<=12, k=3..6, n<=5000: solutions 6 mismatches 0
+k=3: R-values [1, 2]; ratios 1; product-ratio solutions [] (count 0); EQUAL-LCM []; 0s
+k=4: R-values [2, 6]; ratios 1; product-ratio solutions [] (count 0); EQUAL-LCM []; 0s
+k=5: R-values [2, 4, 6, 8, 12, 24]; ratios 7; product-ratio solutions [] (count 0); EQUAL-LCM []; 0s
+k=6: R-values [12, 24, 60, 120]; ratios 4; product-ratio solutions [] (count 0); EQUAL-LCM []; 0s
+k=7: R-values [12, 24, 36, 48, 60, 72, 120, 144, 180, 240, 360, 720]; ratios 22; product-ratio solutions [] (count 0); EQUAL-LCM []; 0s
+k=8: R-values [48, 144, 240, 336, 720, 1008, 1680, 5040]; ratios 13; product-ratio solutions [] (count 0); EQUAL-LCM []; 1s
+k=9: R-values [144, 288, 576, 720, 1008, 1152, 1440, 2016, 2880, 4032, 5040, 5760, 8064, 10080, 20160, 40320]; ratios 31; product-ratio solutions [] (count 0); EQUAL-LCM []; 1s
+k=10: R-values [1440, 2880, 4320, 5760, 8640, 10080, 12960, 17280, 20160, 25920, 30240, 40320, 51840, 60480, 90720, 120960, 181440, 362880]; ratios 37; product-ratio solutions [] (count 0); EQUAL-LCM []; 3s
+k=11: R-values [1440, 2880, 4320, 5760, 7200, 8640, 10080, 11520, 12960, 14400, 17280, 20160, 21600, 25920, 28800, 30240, 34560, 40320, 43200, 50400, 51840, 57600, 60480, 64800, 80640, 86400, 90720, 100800, 103680, 120960, 129600, 151200, 172800, 181440, 201600, 241920, 259200, 302400, 362880, 403200, 453600, 518400, 604800, 725760, 907200, 1209600, 1814400, 3628800]; ratios 157; product-ratio solutions [] (count 0); EQUAL-LCM []; 5s
+k=12: R-values [17280, 34560, 51840, 86400, 103680, 120960, 172800, 190080, 241920, 259200, 362880, 380160, 518400, 570240, 604800, 725760, 950400, 1140480, 1209600, 1330560, 1814400, 1900800, 2661120, 2851200, 3628800, 3991680, 5702400, 6652800, 7983360, 13305600, 19958400, 39916800]; ratios 121; product-ratio solutions [] (count 0); EQUAL-LCM []; 17s

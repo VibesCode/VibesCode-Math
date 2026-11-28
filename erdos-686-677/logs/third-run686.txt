@@ -1,0 +1,37 @@
+686 N=4 k=4 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 9147 cands 2603 Cq 3.5355 5.8s
+686 N=4 k=5 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 28936 cands 2955 Cq 1.3195 15.6s
+686 N=4 k=7 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 20159 cands 5566 Cq 2.4380 10.8s
+686 N=4 k=3 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k [(0, 1)]; nodes 35970 cands 1178 Cq 0.5291 17.0s
+686 N=4 k=6 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k [(1, 2)]; nodes 38851 cands 4150 Cq 7.3495 19.5s
+686 N=4 k=8 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 34674 cands 7107 Cq 12.4867 26.1s
+686 N=4 k=11 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 29422 cands 12924 Cq 5.6716 24.1s
+686 N=4 k=10 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 42851 cands 10952 Cq 18.9536 37.3s
+686 N=4 k=9 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k [(2, 3)]; nodes 50686 cands 8875 Cq 3.8884 44.3s
+686 N=4 k=13 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 27367 cands 17955 Cq 7.7878 32.7s
+686 N=4 k=15 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k [(4, 5)]; nodes 36633 cands 23360 Cq 10.2371 54.1s
+686 N=4 k=14 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 79145 cands 20469 Cq 35.8831 84.5s
+686 N=4 k=12 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k [(3, 4)]; nodes 119572 cands 15516 Cq 26.7521 112.1s
+686 N=4 k=16 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 84416 cands 26494 Cq 46.3469 106.6s
+686 N=4 k=17 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 45829 cands 29925 Cq 13.0197 69.1s
+686 N=25 k=3 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 35831 cands 2354 Cq 0.9747 21.2s
+686 N=25 k=4 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 14359 cands 3179 Cq 5.5902 12.0s
+686 N=4 k=19 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 44084 cands 36567 Cq 16.1355 96.2s
+686 N=25 k=5 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 72500 cands 4549 Cq 1.9037 51.3s
+686 N=4 k=18 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k [(5, 6)]; nodes 98694 cands 33569 Cq 58.1437 132.5s
+686 N=25 k=7 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 24178 cands 7278 Cq 3.1676 12.6s
+686 N=25 k=8 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 37163 cands 8965 Cq 15.7012 25.5s
+686 N=25 k=9 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 29330 cands 10862 Cq 4.7666 17.2s
+686 N=25 k=6 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 118331 cands 5677 Cq 9.9749 64.6s
+686 N=25 k=11 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 56400 cands 15944 Cq 6.6997 31.3s
+686 N=25 k=10 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 52638 cands 13079 Cq 22.7656 36.6s
+686 N=4 k=20 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 126432 cands 40809 Cq 71.2736 158.7s
+686 N=25 k=12 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 74501 cands 17993 Cq 31.1660 52.2s
+686 N=25 k=13 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 49061 cands 20442 Cq 8.9667 41.2s
+686 N=25 k=15 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 57268 cands 26155 Cq 11.5674 45.7s
+686 N=25 k=14 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 77448 cands 23296 Cq 40.9014 65.6s
+686 N=25 k=17 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 48923 cands 33288 Cq 14.5016 59.7s
+686 N=25 k=16 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 124850 cands 29663 Cq 51.9712 93.7s
+686 N=25 k=19 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 44547 cands 40574 Cq 17.7693 75.9s
+686 N=25 k=18 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 118109 cands 36678 Cq 64.3751 119.0s
+686 N=25 k=20 X<=10^1000: solutions(m>=n+k) []; overlapping m<n+k []; nodes 127442 cands 45122 Cq 78.1129 149.8s
+EXIT 0
