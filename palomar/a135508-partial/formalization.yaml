@@ -1,0 +1,120 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "McEachen's conjecture for OEIS A135508: all primes below 160,000 and an infinite family"
+  description: >-
+    Let x(1) = 1 and x(n) = 2·x(n−1) + lcm(x(n−1), n), and a(n) = x(n+1)/x(n) − 2 (OEIS
+    A135508). McEachen conjectured in 2025 that a(p − 1) = p for every prime p such that p − 2
+    is not prime; Cloitre (arXiv:2510.18891, Cor. 6.6) derived it from an unproved hypothesis
+    on the recurrence. This formalization proves two unconditional partial results, in Lean 4
+    with Mathlib and only the standard axioms: the conjecture holds for every prime p < 160,000,
+    and it holds for every prime p (of any size) for which the smallest prime factor of p − 2
+    is below 400. The proof shows that every prime q < 400 divides x(q² − 1), by kernel
+    computation, and that this forces a(p − 1) = p whenever q divides p − 2. The full
+    conjecture is not settled.
+  authors:
+    - "VibesCode"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "VibesCode"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11B37", "11A41"]
+
+sources:
+  - title: "OEIS A135508"
+    authors:
+      - "The OEIS Foundation"
+    contributors:
+      - name: "Bill McEachen"
+        role: "problem-proposer (conjecture, Sep 26 2025)"
+    id: "https://oeis.org/A135508"
+    type: "web discussion"
+    relationship: "independently-proves"
+    note: "Proves the conjectured identity for the primes stated in the two theorems, not in general."
+    author_endorsement: "not-contacted"
+  - title: "Primes in LCM recurrences"
+    authors:
+      - "Benoit Cloitre"
+    id: "arXiv:2510.18891"
+    type: "paper"
+    location: "https://arxiv.org/abs/2510.18891"
+    relationship: "background"
+    note: >-
+      Section 6 treats this recurrence and proves the conjecture conditionally (Cor. 6.6). The
+      reduction to "every composite m with m + 2 prime shares a factor with x(m − 1)" used here is
+      implicit in that proof.
+    author_endorsement: "not-contacted"
+  - title: "formal-conjectures: FormalConjectures/OEIS/135508.lean"
+    authors:
+      - "The Formal Conjectures Authors"
+    id: "https://github.com/google-deepmind/formal-conjectures/blob/9097e2f90e66d2f6244209cb1c07f7120d17ec53/FormalConjectures/OEIS/135508.lean"
+    type: "other"
+    relationship: "other"
+    license: "Apache-2.0"
+    note: "The definitions OeisA135508.x and OeisA135508.a are copied verbatim from this file."
+    author_endorsement: "n/a"
+
+related_formalizations:
+  - id: "https://github.com/GuillaumeBAUD-coder/open-math-agents"
+    relationship: "independent"
+    note: >-
+      Contains Lean reductions of the same conjecture (reductions/OeisA135508.conjecture.R1.lean
+      and R1.H2.R1.lean), including the gcd reduction and a witness-based reduction left
+      conditional on an unproved finite table. No code from it is used.
+  - id: "https://github.com/senamakel/conjectures-lean"
+    relationship: "other"
+    note: "Notes the same gcd reformulation and reports a numerical check for p < 20,000."
+
+status:
+  scope: >-
+    Proved: a(p − 1) = p for every prime p with p − 2 not prime and p < 160000; and for every
+    prime p with p − 2 not prime and (p − 2).minFac < 400. Not proved: the conjecture for primes
+    p ≥ 160000 whose p − 2 has all prime factors at least 400.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude (Anthropic)"]
+      framework: "n/a"
+      tool_setup: "AI-assisted: the proof was written with AI assistance (Claude) and is checked by Lean 4 with Mathlib."
+      prompting_notes: "n/a"
+  spend_usd: "not tracked"
+  notes: >-
+    AI-assisted using Claude models, directed by VibesCode. The proof was written with AI
+    assistance and is checked by Lean. The formal statements were compared against the OEIS
+    entry and the formal-conjectures statement.
+
+fidelity:
+  divergences: "none known; the definitions and the shape of the conjecture are formal-conjectures' own."
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none (no human expert review)"
+  notes: >-
+    The formal statements were compared against the OEIS conjecture. Correctness rests on the
+    Lean check. No human mathematician has reviewed the proof.
+
+alignment:
+  namespace: "OeisA135508"
+  statements:
+    - source: "OEIS A135508, McEachen's conjecture, restricted to p < 160000"
+      lean: "a135508_conjecture_lt_160000"
+      module: "Challenge"
+      status: "partial"
+      note: "The conjecture for all primes below 160,000."
+    - source: "OEIS A135508, McEachen's conjecture, restricted to minFac(p − 2) < 400"
+      lean: "a135508_conjecture_minFac_lt_400"
+      module: "Challenge"
+      status: "partial"
+      note: "An infinite family of primes."
+
+acknowledgements: >-
+  Mathlib; google-deepmind/formal-conjectures for the definitions; Bill McEachen for the
+  conjecture and Benoit Cloitre for the analysis of the recurrence.
