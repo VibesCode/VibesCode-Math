@@ -98,8 +98,16 @@ review:
   reviewers:
     - "none (no human expert review)"
   notes: >-
-    The formal statements were compared against the OEIS conjecture. Correctness rests on the
-    Lean check. No human mathematician has reviewed the proof.
+    No human mathematician has reviewed the proof; correctness rests on the Lean kernel check
+    (and Palomar's independent kernels). Before publication the work also went through an
+    automated, AI-based recheck (Claude), separate from the one that wrote the proof: a rerun
+    of the full build from a clean environment with #print axioms (propext, Classical.choice and
+    Quot.sound only); a second formal statement written blind from the informal wording and
+    proved equivalent in Lean; and an independent Python computation of the recurrence that
+    matches formal-conjectures' a(1..30) and the OEIS data. Limits: that recheck is not a human
+    review; for the minFac < 400 family the blind statement is textually close to ours, so it
+    checks little beyond the wording; and the definitions are formal-conjectures' own, so their
+    fidelity to OEIS rests on that comparison.
 
 alignment:
   namespace: "OeisA135508"
